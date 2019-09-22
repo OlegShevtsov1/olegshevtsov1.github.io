@@ -1,0 +1,8 @@
+.content-rounded-panel li{
+    margin: 5px;
+}
+
+.language > li {
+    list-style-type:none;
+    display: inline-block;
+}

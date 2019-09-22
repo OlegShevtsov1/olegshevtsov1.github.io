@@ -1,132 +1,349 @@
 # Site settings
-title: Rob Hinds
-twitter_username: rob_hinds
-name: Rob Hinds
+title:
+  uk: Олег Шевцов
+  en: Oleg Shevtsov
+  ru: Олег Шевцов
+
+title_description:
+  uk: Ruby on Rails розробник
+  en: Ruby on Rails developer
+  ru: Ruby on Rails разработчик
+
+#twitter_username: rob_hinds
+name: Oleg Shevtsov
 
 # Build settings
 markdown: kramdown
 
-#User specific content
-#Links that will appear in the navbar
-primarylinks:
- - title: Blog
-   url: http://automateddeveloper.blogspot.com/
- - title: GitHub
-   url: https://github.com/robhinds
- - title: StackOverflow
-   url: http://stackoverflow.com/users/258813/rhinds
- - title: DZone
-   url: https://dzone.com/users/899489/rhinds.html
- - title: LinkedIn
-   url: https://www.linkedin.com/pub/rob-hinds/21/361/3b1
+about_me:
+  uk: RoR-розробник із засліплючою ясністю розуму і невгамовною жагою до знань.
+  en: RoR developer with a dazzling clarity of mind and an unquenchable thirst for knowledge.
+  ru: RoR-разработчик с ослепительной ясностью ума и неутолимой жаждой знаний.
 
-#Any buzzword skills you want to include
-skills:
- - Scala
- - Akka-http
- - Microservices
- - Slick
- - Product management
- - API design
- - Groovy
- - Spring MVC/Boot/Social
- - Gradle
- - Java
- - JPA
- - SQL
- - REST
- - Technical Architecture
- - Machine learning
+about_start:
+  uk: На початку 2019 року вирішив вивчити щось нове, і цим чимось стала веб-розробка на мові програмування Ruby. Вже через пару місяців
+    мене затягнуло так, що занурився в цю справу з головою і надовго. Тепер можу з упевненістю сказати,
+    що я люблю те, чим займаюся.
+  en: At the beginning of 2019, I decided to learn something new, and this was web development in Ruby programming language.
+    In a couple of months I was drawn in so that I plunged into this matter with my head for a long time.
+    Now I can say with confidence that I love what I do.
+  ru: В начале 2019 года решил изучить что-то новое, и этим чем-то стала веб-разработка на языке программирования Ruby. Уже через пару месяцев
+    меня затянуло так, что погрузился в это дело с головой и надолго. Теперь  могу с уверенностью сказать,
+    что я люблю то, чем занимаюсь.
+
+contacts_title:
+  uk: Контакти
+  en: Contacts
+  ru: Контакты
+
+phone_title:
+  uk: Телефон
+  en: Phone
+  ru: Телефон
+
+telegram_title:
+  uk: Телеграм
+  en: Telegram
+  ru: Телеграм
+
+contacts:
+  phone: +38 098 234 59 96
+  phoneurl: tel:+380982345996
+  telegram: t.me/olegshevtsov1
+  telegramurl: https://t.me/olegshevtsov1
+  email: olegshevtsov1@gmail.com
+  emailurl: mailto:olegshevtsov1@gmail.com
+  github: github.com/olegshevtsov1
+  githuburl: https://github.com/olegshevtsov1
+  gitlab: gitlab.com/olegshevtsov1
+  gitlaburl: https://gitlab.com/olegshevtsov1
+  linkedin: linkedin.com/in/olegshevtsov1
+  linkedinurl: https://www.linkedin.com/in/olegshevtsov1
+#  skype: shewa-net
+#  skypeurl: skype:-shewa-net-?chat
+
+
+programmer_skills_title:
+  uk: Навички програміста
+  en: Programmer skills
+  ru: Навыки программиста
+
+ror_skills_title:
+  uk: Навички Ruby on Rails
+  en: Ruby on Rails skills
+  ru: Навыки Ruby on Rails
 
 #Blogfeed is optional - including this will add JS to call the feed and populate blog list
-blogfeed: https://automateddeveloper.blogspot.com/feeds/posts/default?alt=json
+#blogfeed: https://automateddeveloper.blogspot.com/feeds/posts/default?alt=json
+#blogfeed: http://howto.up.km.ua/feed
 
-#Work experience is required
-roles:
- - title: CTO
-   start: 2017
-   end: Ongoing
-   employer: Basement Crowd
-   description: Legaltech startup producing a range of innovative legal products. Products include <a href="https://www.juriosity.com" taget="_blank">Juriosity</a>, <a href="https://www.fromcounsel.com" taget="_blank">FromCounsel</a>, <a href="https://www.sparqa.com" taget="_blank">Sparqa</a>.
- - title: Senior Engineer
-   start: 2016
-   end: 2017
-   employer: Emerald Street Ventures
-   description: Emerald Street Ventures was established as an incubator vehicle for the development of a number of software and legal-tech projects, and a rapidly growing, London-based start-up using innovative technologies to revolutionise and change the software and legal-tech landscape. Working with a range of cutting edge technologies and techniques including Scala, Cassandra, CoreOS, a variety of Machine Learning techniques.
- - title: Senior Engineer
-   start: 2012
-   end: 2016
-   employer: Covestor
-   description: Covestor is an investment marketplace startup that was successfully acquired by Interactive Brokers in 2015. <br/> Working as a senior engineer, I worked closely with the CTO and across the full-stack, I was involved in all aspects of the technology including the website and back-end services.
- - title: Associate Manager
-   start: 2005
-   end: 2012
-   employer: Accenture
-   description: Working on a range of functional and technical roles, primarily working on client sites in Financial Services in London and Europe.
+intro:
+  uk:
+  en:
+  ru:
+    
 
-#Education is required
-education:
- - level: Bachelor of Science (B.Sc.)
-   date: 2003
-   subject: Artificial Intelligence and Computer Science
-   school: University of Birmingham
+programming_experience_title:
+  uk: Досвід програмування
+  en: Programming experience
+  ru: Опыт программирования
 
-#This section is optional (as is the image link below)
-coursera:
-   profileurl: https://www.coursera.org/user/i/c6362b4056f755a04bef6a791a62102b
-   courses:
-    - title: Functional Programming Principles in Scala
-      link: https://www.coursera.org/course/progfun
-      optionalimage: https://d1z850dzhxs7de.cloudfront.net/topics/progfun/small-icon.hover.png
-      date: September 16, 2013
-    - title: Algorithms Design and Analysis, Part 1
-      link: https://www.coursera.org/specializations/algorithms
-      optionalimage: https://d1z850dzhxs7de.cloudfront.net/topics/algo/small-icon.hover.png
-      date: April 28, 2014
+programming_experience_hartl:
+  uk: грудень 2018 - квітень 2019, Rails Winter 19
+  en: December 2018 - April 2019, Rails Winter 19
+  ru: декабрь 2018  - апрель 2019, Rails Winter 19
 
-#This section is optional - embeds slideshows from speakerdeck
-# to get the speakerdeck ID copy the embed code and look for the data-it attribute
-speakerdeck:
-   profileurl: https://speakerdeck.com/robhinds
-   talks:
-    - title: Product Management for Engineers
-      speakerdeckId: 94f0070c4e434ec79fe9b4eb2cb574e0
-      conference: API Conference, Berlin 2018
-    - title: Agile Machine Learning - from Theory to Production
-      speakerdeckId: ec84f2f56e9743afb0675b1eeeb6b6ce
-      conference: W-JAX Conference, Munich 2017 (London 2017)
+programming_experience_codecademy:
+  uk: січень 2019  , Codecademy
+  en: January 2019  , Codecademy
+  ru: январь 2019  , Codecademy
+
+programming_experience_hasbrains:
+  uk: лютий 2019 - травень 2019, скрінкасти по Ruby, Rails
+  en: February 2019 - May 2019, Ruby, Rails screencasts
+  ru: февраль 2019  - май 2019, скринкасты по Ruby, Rails
+
+programming_experience_rubyrash:
+  uk: червень 2019, безкоштовний проект від Хороший програміст
+  en: June 2019, a free project from Good programmer
+  ru: июнь 2019, бесплатный проект от Хороший программист
+
+ror_experience_general:
+  uk: Загальний досвід програмування на Ruby on Rails - 1 рік.
+  en: General Ruby on Rails programming experience - 1 year.
+  ru: Общий опыт программирования на Ruby on Rails - 1 год.
+
+ror_experience:
+  uk: В процесі роботи над проектами отримав досвід роботи з популярними гемами devise, carrierwave, activestorage,
+    capistrano, sidekiq, rspec, factory_bot, simple_form, haml, slim,  хостингом Heroku, PostgreSQL, сервісом GitHub, Trello і безліччю іншого.
+  en: In the process of working on projects, I gained experience with the popular gems devise, carrierwave, activestorage,
+    capistrano, sidekiq, rspec, factory_bot, simple_form, haml, slim  Heroku hosting, PostgreSQL, GitHab, Trello and many more.
+  ru: В процессе работы над проектами получил опыт работы с популярными гемами devise, carrierwave, activestorage,
+    capistrano, sidekiq, rspec, factory_bot, simple_form, haml, slim хостингом Heroku, PostgreSQL, сервисом GitHab, Trello и множеством другого.
+
+frontend_title:
+  uk: React
+  en: React
+  ru: React
+
+#List of interesting frontend lessons
+frontends:
+  - title:
+      uk:
+        description: Жовтень 2019 -
+        description_url: ReactJS.org
+      en:
+        description: October 2019 -
+        description_url: ReactJS.org
+      ru:
+        description: Октябрь 2019 -
+        description_url: ReactJS.org
+    url: https://reactjs.org/docs/getting-started.html
+  - title:
+      uk:
+        description: Листопад 2019 -
+        description_url:  Курс ReactJS Live
+      en:
+        description: November 2019 -
+        description_url: Course ReactJS Live
+      ru:
+        description: Ноябрь 2019 -
+        description_url: ReactJS Live
+    url: https://www.youtube.com/playlist?list=PLevjgbzdU8UxfbRrLb_ILGXRAHbeJT7w2
+
+other_skills_title:
+  uk: Інші навички
+  en: Other skills
+  ru: Другие навыки
+
+english:
+  uk: лютий 2016 - травень 2019 Англійська, B1
+  en: February 2016 - Spring 2019 English, B1
+  ru: февраль 2016  - май 2019 Английский, B1
+
+english_flash:
+  uk: Школа англійської мови FLASH
+  en: English School FLASH
+  ru: Школа английского языка FLASH
+
+php_laravel:
+  uk: лютий 2018 - листопад 2019  курс по фреймворку Laravel
+  en: February 2018 - November 2019 Laravel framework course
+  ru: февраль 2018 - ноябрь 2019 курс по фреймворку Laravel
+
+frontend_old:
+  uk: 2016 - 2017  курси по HTML5, CSS3, Bootstrap, JQuery, JS
+  en: 2016 - 2017 courses in HTML5, CSS3, Bootstrap, JQuery, JS
+  ru: 2016 - 2017 курсы по HTML5, CSS3, Bootstrap, JQuery, JS
+
+#Links that will appear in the navbar
+primarylinks:
+#  - title: Blog
+#    url: http://howto.up.km.ua
+  - title: GitHub
+    url: https://github.com/olegshevtsov1
+  - title: GitLab
+    url: https://gitlab.com/olegshevtsov1
+
+books_title:
+  uk: Книги
+  en: Books
+  ru: Книги
 
 #List of interesting Github repo/projects to include - optional
-github:
- - robhinds/robhinds.github.io
- - robhinds/ScaLambda
- - robhinds/opinionated-akka-http
- - robhinds/food2vec
- - robhinds/microservices
- - robhinds/spring-social-geeklist
- - robhinds/spring-social-stackoverflow
- - robhinds/genotype
- - robhinds/footweets
- - robhinds/ElasticSearchGradle
+books:
+  - title:
+      uk: Ruby on Rails Tutorial Michael Hartl
+      en: Ruby on Rails Tutorial Michael Hartl
+      ru: Ruby on Rails Tutorial Michael Hartl
+    url: https://www.railstutorial.org/
+  - title:
+      uk: The Ruby Way Solutions and Techniques in Ruby Programming
+      en: The Ruby Way Solutions and Techniques in Ruby Programming
+      ru: The Ruby Way Solutions and Techniques in Ruby Programming
+    url: https://www.amazon.com/Ruby-Way-Programming-Addison-Wesley-Professional-ebook/dp/B00TH9V9K0
+  - title:
+      uk: The Rails 5 Way (4th Edition) (Addison-Wesley Professional Ruby Series)
+      en: The Rails 5 Way (4th Edition) (Addison-Wesley Professional Ruby Series)
+      ru: The Rails 5 Way (4th Edition) (Addison-Wesley Professional Ruby Series)
+    url: https://www.amazon.com/Rails-Way-Addison-Wesley-Professional-Ruby/dp/0134657675
+
+projects_title:
+  uk: Проекти
+  en: Projects
+  ru: Проекты
+
+#List of interesting Github repo/projects to include - optional
+projects:
+  - title:
+      uk: TODO - Програма для ефективного управління своїми завданнями і проектами
+      en: TODO - Program for effective management of your tasks and projects
+      ru: TODO - Программа для ефективного управления своими задачами и проектами
+    url: https://gitlab.com/olegshevtsov1/todo
+#  - title:
+#      uk: Online School - Програма для організації навчання онлайн
+#      en: Online School - Program for organizing training online
+#      ru: Online School - Програма для организации обучения онлайн
+#    url:
+
+
+projects_other:
+  uk: З безліччю інших проектів можете познайомитися в моїх профілях на
+  en: You can find many other projects in my profiles on
+  ru: Со множеством других проектов можете познакомиться в моих профилях на
+
+education_title:
+  uk: Освіта
+  en: Education
+  ru: Образование
+
+#Education is required
+education_is_required:
+  uk: 1999-2004 — Хмельницький Національний Університет, кафедра комп'ютерних систем та мереж
+  en: 1999-2004 — Khmelnitsky National University, Subject of Computer Systems and Networks
+  ru: 1999-2004 — Хмельницкий Национальный Университет, кафедра компьютерных систем и сетей
+
+previous_jobs_title:
+  uk: Попередні місця роботи
+  en: Previous jobs
+  ru: Предыдущие места работы
+
+ukrtelecom:
+  uk: 2004-2019 — ПАТ "Укртелеком", Старший інжнер експуатації мережі
+  en: 2004-2019 — JSC "Ukrtelecom", Senior Network Engineer
+  ru: 2004-2019 — ПАO "Укртелеком", Старший инженер експлуатации сети
+
+parallel_jobs_title:
+  uk: Паралельні місця роботи
+  en: Parallel jobs
+  ru: Паралельные места работы
+
+
+support_sites:
+  uk: 2011-2017 — Розробка, підтримка CMS - оновлення, розміщення на хостінгу, перенесення на інший хостинг, розробка шаблонів, розробка плагінів, налаштування плагінів, виправлення помилок,  додавання контенту, SEO оптимізація.
+  en: 2011-2017 — CMS development, updating, hosting, transfering to another hosting, template development, plugin development, plugin setup, bug fixes, content adding, SEO optimization.
+  ru: 2011-2017 — Разработка, поддержка CMS - обновление, размещение на хостинге, перенос на другой хостинг, разработка шаблонов, разработка плагинов, настройки плагинов, исправления ошибок, добавление контента, SEO оптимизация.
+
+about_myself_title:
+  ru: О себе
+
+about_myself:
+  uk: <h5>Досягнення</h5>
+    <p>Я займаюсь  розробкою на Ruby on Rails 1 рік , і за цей час я створив 3 власних проекти, 2 з них викладені в публичному репозиторії, а один знаходиться у приватному репозиторії GitLab.
+    Окрім того, я приймав участь в командній роботі. Це 3 проекта, що знаходятся в приватному репозиторії, а сайти завернуто в продакшн.
+    Посилання на публичні репозиторії, а також сайти на продакшн можна знайти в моєму CV - розділ <a href="#projects">Проекти.</a></p>
+    <h5>Відношення до роботи</h5>
+    <p>Я вибудовую конструктивні відношення в работі. Де в першу чергу присутні порядок та послідовність дій. Стараюсь створювати  умови, де повсякденна работа буде зводитися до виконання простих чітких задач , висуваючи їх на перший план повсякденних обов'язків.</p>
+    <p>На більш складні задачі, по яким є невирішені питання, відводжу більшу частину часу. Що дозволяє в комфортні строки обдумати можливі шляхи вирішення для досягнення оптимального результату.
+    Я використовую в своїй работі технологію <a href="https://www.youtube.com/watch?v=BHhr1aMgKPk" alt="SCRUM">SCRUM</a>, вважаю ще це  дозволяє найбільш ефективно планувати робочий процесс. Завдяки чому мої дії стають організованими та сфокусованими на результат.</p>
+
+    <h5>Работа в команді</h5>
+    <p>Безсумнівно моєю сильной стороною є работа в команді. Коли команда синхронно працює над проектом, думає говорить  і робить одне й те саме погоджує власні слова із своїми переконаннями. Сили потроюються.</p>
+    <p>Вважаю що одним із найкращих способів колективно вирішити труднощі поставленої задачі це описати невирішене питання максимально зрозуміло, вказати які шляхи вирішення уже робилися. Розподілення ролей в команді  це ключ до ефективного вирішення труднощей.  Переконаний що сильні сторони кажного члена команди для призначения ролі, найкраще визначити в момент пошуку рішень для важких задач. Завжди приймаю участь в таких задачах. </p>
+    <h5>Саморозвиток</h5>
+    <p>Організував самонавчання максимально комфортно. Нотатки про любу інформацію що коли  небудь  була опрацьована і зрозуміла завжди під рукою.</p>
+    <p>Мені подобається, коли використовуючи в схемі проекту вірні налаштування,  виникають помилки, що спонукають писати ще більш правильніший код.</p>
+    <h5>Хобі</h5>
+    <p>Читаю книги, дивлюсь фільми, фантастику. Займаюсь спортом, здорове харчування, облаштовую дачу.<br> Граю в шахи <a href="https://www.chess.com/member/olegshevtsov1">chess.com/member/olegshevtsov1</a></p>
+    <h5>Відео що подобаються</h5>
+    <ul style="list-style-type:none;">
+    <li><a href="https://www.youtube.com/watch?v=Pl8OlkkwRpc"> How the blockchain is changing money and business | Don Tapscott | TED Channel </a></li>
+    <li><a href="https://www.youtube.com/watch?v=0MKOrDGVdNI">Алексей Мышкин - Розкрию своє серце навстіж.</a></li>
+    </ul>
+  ru:  <h5>Достижения</h5>
+    <p>Я занимаюсь разработкой на Ruby on Rails 1 год и 3 месяца, и за это время я создал 3 собственных проекта, 2 из которых выложены в публичном репозитории а один находится в приватном репозитории GitLab.
+    Кроме того, я учавствовал в командной работе. Это 3 проекта, которые находятся в приватном репозитории, а сайты завернуты в продакшн.
+    Ссылки на публичные репозитории, а так же сайты на продакшн можна найти в моем CV - раздел <a href="#projects">Проекты.</a></p>
+    <h5>Отношение к работе</h5>
+    <p>Я выстраиваю конструктивные отношения в работе. Где в первую очередь присутствует порядок и последовательность действий. Стараюсь создавать условия, где повседневная работа будет сводиться к выполнению
+    простых четких задач, выдвигая их на первый план повседневных обязанностей.</p>
+    <p>На более сложные задачи, по которым есть нерешенные вопросы, отвожу большее количество времени. Что позволяет в комфортные сроки обдумать возможные пути решения для достижения оптимального результата.
+    Я исспользую в своей работе технологию <a href="https://www.youtube.com/watch?v=BHhr1aMgKPk" alt="SCRUM">SCRUM</a>, считаю что это позволяет более ефективно планировать рабочий процесс.
+    Благодаря чему мои действия становятся организованными и сфокусированными на результат.</p>
+    <h5>Работа в команде</h5>
+    <p>Несомненно моей сильной стороной является работа в команде. Когда команда синхронно работает над проектом, думает говорит и делает одно и тоже, согласовывает свои слова со своими убеждениями. Силы утраиваются.</p>
+    <p>Считаю что одним из лучших способов колективно решить трудности поставленной задачи это описать нерешенный вопрос максимально понятно, указать какие пути решения уже предпринимались. Распределение ролей в команде
+    это ключ к ефективному решению трудностей. Убежден что сильные стороны каждого члена команды для назначения роли, лучше всего определить в момент поиска решений для трудных задач. Всегда принимаю участие в таких задачах. </p>
+    <h5>Саморазвитие</h5>
+    <p>Организовал самообучение максимально комфортно. Заметка о любой информации которая когда либо  была обработана и понята всегда по рукой.</p>
+    <p>Мне нравится, когда исспользуя в схеме проекта верные настройки,  возникают ошибки, которые мотивируют писать еще более правильный код.</p>
+    <h5>Хобби</h5>
+    <p>Читаю книги, смотрю фильмы, фантастику. Занимаюсь спортом, здоровое питание, обустраиваю дачу.<br> Играю в шахматы <a href="https://www.chess.com/member/olegshevtsov1">chess.com/member/olegshevtsov1</a></p>
+    <h5>Видео которые нравятся</h5>
+    <ul style="list-style-type:none;">
+    <li><a href="https://www.youtube.com/watch?v=Pl8OlkkwRpc"> How the blockchain is changing money and business | Don Tapscott | TED Channel </a></li>
+    <li><a href="https://www.youtube.com/watch?v=0MKOrDGVdNI">Алексей Мышкин - Распахну свое сердце настежь.</a></li>
+    </ul>
+  en:
+    <h5>Achievements</h5>
+    <p>I have been developing on Ruby on Rails for 1 year and 3 months, and during this time I created 3 of my own projects, 2 of which are posted in a public repository and one is in a private GitLab repository.</p>
+    <p>Furthermore, I participated in teamwork. These are 3 projects that are in a private repository, and sites are hosted in production.
+    Links to public repositories, as well as production sites can be found in my CV - section <a href="#projects">Projects.</a></p>
+    <h5>Attitude to work</h5>
+    <p>I build constructive relationships at work. Where in the first place is the order and sequence of actions. I try to create conditions where everyday work will be reduced to fulfillment  simple, clear tasks, putting them first.</p>
+    <p>For more complex tasks, for which there are unresolved issues, I devote more time. That allows you to think in a comfortable time possible solutions to achieve the optimal result.
+    I will use <a href="https://www.youtube.com/watch?v=BHhr1aMgKPk" alt="SCRUM">SCRUM</a> technology in my work, I believe that this allows you to more efficiently plan your workflow.
+    Thanks to what my actions become organized and focused on the result.</p>
+    <h5>Teamwork</h5>
+    <p>My strong point is teamwork. When a team works on a project, thinks, speaks and does the same thing, reconciles its words with its beliefs. Forces are tripled.</p>
+    <p>I believe that one of the best ways to collectively solve the difficulties of the task is to describe the unresolved issue as clearly as possible, indicate which solutions have already been taken. Team Role Distribution  this is the key to an effective solution to difficulties. I know that the strengths of each team member for assigning a role are best determined at the time of finding solutions to difficult tasks. I always take part in such tasks.</p>
+    <h5>Self-training</h5>
+    <p>Organized self-training as comfortable as possible. A note about any information that has ever been processed and understood always by hand.</p>
+    <p> I like when using the correct settings in the project scheme, errors occur that motivate you to write even more correct code. </p>
+    <h5>Hobby</h5>
+    <p>I read books, watch movies, science fiction. I play sports, eat healthy.<br> I play chess <a href="https://www.chess.com/member/olegshevtsov1">chess.com/member/olegshevtsov1</a></p>
+    <h5>The videos I like</h5>
+    <ul style="list-style-type:none;">
+    <li><a href="https://www.youtube.com/watch?v=Pl8OlkkwRpc"> How the blockchain is changing money and business | Don Tapscott | TED Channel </a></li>
+    <li><a href="https://www.youtube.com/watch?v=0MKOrDGVdNI">Alexey Myshkin - I will open my heart wide.</a></li>
+    </ul>
 
 #Stackoverflow flair is optional
 stackoverflow:
-   profileurl: http://stackoverflow.com/users/258813/rhinds
-   flairimageurl: http://stackoverflow.com/users/flair/258813.png
+  profileurl: https://stackoverflow.com/users/8607987/oleg-shevtsov
+  flairimageurl: http://stackoverflow.com/users/flair/8607987.png
 
-intro: |
-  I am an engineer with 15 years experience working in technology. I have primarily worked on the JVM, but have worked across a broad range of technologies thereon: Java, Groovy, Android, Coldfusion and most recently Scala. As well as spending a reasonable amount of time building applications for the web, which has given me an exposure to a range of javascript technologies over the years, through jQuery, extjs, knockout, backbone and most recently to React. <br/><br/>
-  I enjoy building interesting products, with a good Product Management focus and a good emphasis on good engineering principles and clean code (having worked across differing languages on the JVM, I recognise that good code is contextual).<br/><br/>
-  I have worked in large scale consultancy roles across Europe as well as a mix of startup experience (including one that was acquired) and I am currently the Chief Technology Officer at a legal-tech startup called <a href="https://www.basementcrowd.com" target="_blank">Basement Crowd</a> where we are building innovative products to serve the legal industry.
+url: "https://olegshevtsov1.github.io"
+plugins:
+  - jekyll-sitemap
 
-#An additional info freetext section is optional at the bottom of the page - can be text or HTML
-additionalinfo: |
-   <strong>Scala</strong>: My current role uses Scala as the primary language and have been building applications in Scala for the last two years. I am familiar with a range of Scala libraries, such as <a target="_blank" href="http://automateddeveloper.blogspot.com/2017/12/an-opinionated-guide-to-building-apis.html"> Akka-Http for building microservices</a> and <a target="_blank" href="http://automateddeveloper.blogspot.com/2018/09/generic-programming-with-scala.html"> Shapeless for generic programming</a>, as well as familiar with a range of <a target="_blank" href="https://basementcrowd.com/2018/11/28/scala-the-aux-pattern-path-dependent-types/" >functional programming techniques available</a>.<br/><br/>
-   <strong>Java</strong>: I am experienced in a variety of Java API’s and frameworks. I have worked with Spring 4, Spring Boot, JPA (Hibernate and EclipseLink) in addition to others. <br/><br/>
-   <strong>Groovy</strong> I have used Groovy as a language in production for ~4 years and I am familiar with many of the languages features (such as writing <a target='_blank' href="https://dzone.com/articles/functional-programming-groovy">Functional Programming style groovy</a>) and quirks (such as <a target="_blank" href="https://dzone.com/articles/groovy-retrospective-an-addendum-memory-usage-perm">memory leak issues</a>). <br/><br/>
-   <strong>Cloud platforms</strong>: I have primarily used AWS for running production apps on the cloud. I have experience setting up, configuring and running applications using a range of AWS offerings, including EC2, RDS, S3, Cogito, <a target="_blank" href="http://automateddeveloper.blogspot.com/2018/05/serverless-with-aws-lambda-scala.html">Lambda</a> and its more recent <a target="_blank" href="http://automateddeveloper.blogspot.com/2018/10/machine-learning-with-aws-scala.html">Machine Learning capabilities</a>.<br/><br/>
-   <strong>Web Development</strong>: Through building web applications, I have also worked with various client side technology, having used jQuery, Bootstrap, LESS, SASS, Backbone/Underscore/Require. More recently I have written React applications (primarily using the Create React App framework, and extending them)<br/><br/>
-   <strong>Development Control</strong>: I have a good knowledge of application life-cycle management and have worked with SVN, Git, Maven, Gradle, Sonar, Jenkins, TeamCity, etc. I have experience with an array of testing tools and technologies.<br/><br/>
-   I have also gained experience and knowledge of other technologies from several side projects and research that I have undertaken in my free time, including Android, a variety of social APIs (Twitter etc) and cloud platforms such as CloudFoundry/OpenShift/AppFog/AWS. <br/><br/>
-   As part of Nerdability, I created, and am now primary contributor to, two Spring projects - <a target='_blank' href="https://github.com/robhinds/spring-social-geeklist">Spring-Social-Geeklist</a> and <a target='_blank' href="https://github.com/nerdability/spring-social-khan-academy">Spring-Social-Khan-Academy</a>, which provide core integration with those third-party APIs on top of the Spring Social framework. They are both listed as community projects: <a target='_blank' href="http://projects.spring.io/spring-social/">http://projects.spring.io/spring-social/</a>. <br/><br/>
-   I write a blog covering technical and opinion articles that can be found here: <a target='_blank' href="http://automateddeveloper.blogspot.com/">automateddeveloper.blogspot.com</a> (I am also a <a target='_blank' href="https://dzone.com/users/899489/rhinds.html">DZone MVB</a>)

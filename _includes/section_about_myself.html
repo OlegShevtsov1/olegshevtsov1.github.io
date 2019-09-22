@@ -1,0 +1,21 @@
+{% if site.about_myself %}
+<div id="introBubble" class="rounded_panel txt_lightgrey">
+    <div class="top-rounded-panel grey-bg">
+    </div>
+    <div class="content-rounded-panel">
+        <div id="introBlurb">
+            <div class="row">
+                <div class="twelve columns">
+                    <div>
+                        <h4>{{ site.about_myself_title[page.lang] }}</h4>
+                        <hr/>
+                        <p>{{ site.about_myself[page.lang] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+{% endif %}
+

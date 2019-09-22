@@ -1,13 +1,102 @@
 {% if site.intro %}
-	<div id="introBubble" class="rounded_panel txt_lightgrey">
-		<div class="top-rounded-panel grey-bg">
-			<h1 id="user-intro">Introduction &amp; Background</h1>
-		</div>
-		<div class="content-rounded-panel">
-			<div id="introBlurb">
-				{{site.intro}}
-			</div>
-			<br>
-		</div>
-	</div>
+<div class="rounded_panel txt_lightgrey">
+    <div class="top-rounded-panel grey-bg">
+    </div>
+    <div class="content-rounded-panel">
+        <div>
+            <div class="row">
+                <div class="twelve columns">
+                    <p style="text-decoration: underline"><i>{{ site.about_me[page.lang] }}</i></p>
+                    <p>{{ site.about_start[page.lang] }} </p>
+                    <div>
+                        <h4>{{ site.programming_experience_title[page.lang] }}</h4>
+                        <hr/>
+                        <ul style="list-style-type:circle; margin: 3px">
+                            <li>{{ site.programming_experience_hartl[page.lang] }} -
+                                <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial Michael Hartl</a></li>
+                            <li>{{ site.programming_experience_codecademy[page.lang] }} -
+                                <a href="https://www.codecademy.com/learn/learn-rails">Learn Ruby</a></li>
+                            <li>{{ site.programming_experience_hasbrains[page.lang] }} -
+                                <a href="https://www.youtube.com/user/RubyScreencastsRu/videos">Screencasts
+                                    HasBrains</a>
+                            </li>
+                            <li>{{ site.programming_experience_rubyrash[page.lang] }} - <a href="https://rubyrush.ru/">RubyRash</a>
+                            </li>
+                        </ul>
+                        <br>
+                        <p>{{ site.ror_experience_general[page.lang] }}</p>
+                        <p>{{ site.ror_experience[page.lang] }}</p>
+                        <br>
+                        <h5>{{ site.frontend_title[page.lang] }}</h5>
+                        <ul style="list-style-type:circle; margin: 3px">
+                            {% for frontend in site.frontends %}
+                            <li>
+                                {{frontend.title[page.lang].description}} <a href="{{frontend.url}}">{{frontend.title[page.lang].description_url}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <br>
+                        <br>
+                        <h5>{{ site.books_title[page.lang] }}</h5>
+                        <ul style="list-style-type:none; margin: 3px">
+                            {% for book in site.books %}
+                            <li>
+                                <a href="{{book.url}}">{{book.title[page.lang]}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+
+                        <br>
+
+
+                        <h5>{{ site.other_skills_title[page.lang] }}</h5>
+                        <hr/>
+                        <ul style="list-style-type:circle; margin: 3px">
+                            <li>{{ site.english[page.lang] }} - <a href="http://flashstudies.net/">{{
+                                site.english_flash[page.lang] }}</a></li>
+                            <li>{{ site.php_laravel[page.lang] }} - <a href="https://laravel.com/">PHP Framework
+                                Laravel</a></li>
+                            <li>{{ site.frontend_old[page.lang] }} - <a href="https://ruseller.com/">RUSELLER.COM</a></li>
+                        </ul>
+
+                    </div>
+                    <div>
+                        <h4><a id="projects"></a>{{ site.projects_title[page.lang] }}</h4>
+                        <hr/>
+
+                        <ul style="list-style-type:none; margin: 3px">
+                            {% for project in site.projects %}
+                            <li>
+                                <a href="{{project.url}}">{{project.title[page.lang]}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+
+                        <br>
+
+                        <p> {{ site.projects_other[page.lang] }} {% for link in site.primarylinks %}
+                            <a target='_blank' href="{{link.url}}">{{link.title}}</a>
+                            {% endfor %}</p>
+                    </div>
+                    <div>
+                        <h4>{{ site.education_title[page.lang] }}</h4>
+                        <hr/>
+                        <p>{{ site.education_is_required[page.lang] }}</p>
+                    </div>
+                    <div>
+                        <h4>{{ site.previous_jobs_title[page.lang] }}</h4>
+                        <hr/>
+                        <p>{{ site.ukrtelecom[page.lang] }}</p>
+                    </div>
+                    <div>
+                        <h4>{{ site.parallel_jobs_title[page.lang] }}</h4>
+                        <hr/>
+                        <p>{{ site.support_sites[page.lang] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
 {% endif %}

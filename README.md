@@ -21,4 +21,8 @@ If you want to test it locally, install Ruby & Jekyll, clone the repository loca
 
 If you want to host the page on your own web hosting, you will need to run it locally and jekyll will build the site files to the /_site directory which you can then push to your hosting provider - See https://jekyllrb.com/ for details.
 
+## For multilingual
+https://www.sylvaindurand.org/making-jekyll-multilingual/
 
+## Supported plugin Jekyll GitHub
+https://help.github.com/en/articles/about-github-pages-and-jekyll#plugins

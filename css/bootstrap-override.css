@@ -26,7 +26,10 @@
 	background-color: #005985;
 	text-shadow:none;
 	font-weight: normal;
+}
 
+.label{
+	font-size: 20px;
 }
 
 /** Flat Buttons **/

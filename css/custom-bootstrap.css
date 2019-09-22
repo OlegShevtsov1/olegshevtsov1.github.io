@@ -1,0 +1,10 @@
+.dropdown-menu {
+    /*margin-right: 0px;*/
+    width: 180px;
+}
+
+.dropdown-menu > li {
+    display: inline-block;
+}
+
+

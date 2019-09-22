@@ -1,0 +1,22 @@
+{% if site.contacts %}
+<div class="rounded_panel txt_lightgrey">
+    <div class="top-rounded-panel grey-bg">
+        <h4>{{ site.contacts_title[page.lang] }}</h4>
+        <hr/>
+    </div>
+    <div class="content-rounded-panel">
+        <div>
+            <ul style="list-style-type:none; margin: 3px">
+                <li><b>{{ site.phone_title[page.lang] }}</b></li>
+                <li><a href="{{site.contacts.phoneurl}}"> {{site.contacts.phone}} </a></li>
+                <li><b>{{ site.telegram_title[page.lang] }}</b></li>
+                <li><a href="{{site.contacts.telegramurl}}">{{site.contacts.telegram}}</a></li>
+                <li><b>E-mail</b></li>
+                <li><a href="{{site.contacts.emailurl}}">{{site.contacts.email}}</a></li>
+                <li><b>LinkedIn</b></li>
+                <li><a href="{{site.contacts.linkedinurl}}">{{site.contacts.linkedin}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endif %}

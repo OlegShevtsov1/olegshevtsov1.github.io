@@ -1,8 +1,12 @@
 <footer>
-	<hr size="3">
-	{% if site.twitter_username %}
-		<p><a target='_blank' href="https://twitter.com/{{site.twitter_username}}">@{{site.twitter_username}}</a></p>
-	{% endif %}
-	<p>London, UK</p>
-	<br>
+	<hr>
+    <a id="lang"></a>
+    <ul class="language">
+        <li><a href="{{ '/uk#lang' | prepend: site.baseurl }}" class="language" rel="uk-UA"><img src="/img/uk_UA.png" alt="Ukraine" style="width: 25px"/></a>
+        </li>
+        <li><a href="{{ '/en#lang' | prepend: site.baseurl }}" class="language" rel="en-US"><img src="/img/en_US.png" alt="English" style="width: 25px"/></a>
+        </li>
+        <li><a href="{{ '/ru#lang' | prepend: site.baseurl }}" class="language" rel="ru-RU"><img src="/img/ru_RU.png" alt="Russian" style="width: 25px"/></a>
+        </li>
+    </ul>
 </footer>

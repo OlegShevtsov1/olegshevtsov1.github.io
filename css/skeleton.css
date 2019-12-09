@@ -128,7 +128,16 @@ body {
   color: #222;}
 .header.color {
   color:White;
-  background-color:#363a45;}
+  /*background-color:#363a45;*/
+  background-image: url(/img/2019.png);
+  position: relative;
+}
+.header.img {
+  position: absolute;
+}
+.header.title {
+  position: absolute;
+}
 .contacts.color {
   background-color:#f1f1f1;}
 .ruby.scale {

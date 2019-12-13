@@ -220,11 +220,11 @@ projects:
       en: TODO - Program for effective management of your tasks and projects
       ru: TODO - Программа для ефективного управления своими задачами и проектами
     url: https://gitlab.com/olegshevtsov1/todo
-#  - title:
-#      uk: Online School - Програма для організації навчання онлайн
-#      en: Online School - Program for organizing training online
-#      ru: Online School - Програма для организации обучения онлайн
-#    url:
+  - title:
+      uk: Online School - Програма для організації навчання онлайн
+      en: Online School - Program for organizing training online
+      ru: Online School - Програма для организации обучения онлайн
+    url: https://gitlab.com/olegshevtsov1/on_school/
 
 
 projects_other:

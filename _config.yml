@@ -46,6 +46,12 @@ telegram_title:
   en: Telegram
   ru: Телеграм
 
+skype_title:
+  uk: Skype
+  en: Skype
+  ru: Skype
+
+
 contacts:
   phone: +38 098 234 59 96
   phoneurl: tel:+380982345996
@@ -59,8 +65,8 @@ contacts:
   gitlaburl: https://gitlab.com/olegshevtsov1
   linkedin: linkedin.com/in/olegshevtsov1
   linkedinurl: https://www.linkedin.com/in/olegshevtsov1
-#  skype: shewa-net
-#  skypeurl: skype:-shewa-net-?chat
+  skype: live:olegshevtsov1
+  skypeurl: skype:-live:olegshevtsov1-?chat
 
 
 programmer_skills_title:

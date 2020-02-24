@@ -222,15 +222,35 @@ projects_title:
 #List of interesting Github repo/projects to include - optional
 projects:
   - title:
-      uk: TODO - Програма для ефективного управління своїми завданнями і проектами
-      en: TODO - Program for effective management of your tasks and projects
-      ru: TODO - Программа для ефективного управления своими задачами и проектами
-    url: https://gitlab.com/olegshevtsov1/todo
+      uk: VIVATRICKO - Шапки оптом від виробника (backend)
+      en: VIVATRICKO - Wholesale hats from the producer (backend)
+      ru: VIVATRICKO - Шапки оптом от производителяn (backend)
+    url: https://vivatricko.com.ua/
+  - title:
+      uk: Residential Complexes - Сторінка нерухомості Товарна Біржа Подільська (frontend, backend)
+      en: Residential Complexes - Real Estate Page Commodity Exchange Podolsk (frontend, backend)
+      ru: Residential Complexes - Страница недвижимости Подольская Товарная Биржа (frontend, backend)
+    url: https://birzha.km.ua/residential_complexes
+  - title:
+      uk: Nina Nail - Сервіс запису до майстра на манікюр
+      en: Nina Nail - Manicure master recording service
+      ru: Nina Nail - Сервис для записи к мастеру на маникюр
+    url: https://gitlab.com/olegshevtsov1/nina
+  - title:
+      uk: ROR Blog - Блог Ruby on Rails розробника
+      en: ROR Blog - Ruby on Rails Developer's Blog
+      ru: ROR Blog - Блог Ruby on Rails разработчика
+    url: https://gitlab.com/olegshevtsov1/blog
   - title:
       uk: Online School - Програма для організації навчання онлайн
       en: Online School - Program for organizing training online
       ru: Online School - Програма для организации обучения онлайн
     url: https://gitlab.com/olegshevtsov1/on_school/
+  - title:
+      uk: TODO - Програма для ефективного управління своїми завданнями і проектами
+      en: TODO - Program for effective management of your tasks and projects
+      ru: TODO - Программа для ефективного управления своими задачами и проектами
+    url: https://gitlab.com/olegshevtsov1/todo
 
 
 projects_other:

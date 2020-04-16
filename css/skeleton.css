@@ -130,9 +130,7 @@ body {
   color:White;
   background-color:#363a45;
   /*background-image: url(/img/2019.png);*/
-  /*background: url(/img/motivation2020.jpg) 5% 40% no-repeat;*/
-  /*background-size: cover;*/
-  /*height: 200px;*/
+  background-image: url(/img/2020.png);
   position: relative;
 }
 .header.img {

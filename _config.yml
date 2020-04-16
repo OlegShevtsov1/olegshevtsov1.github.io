@@ -115,9 +115,9 @@ programming_experience_rubyrash:
   ru: июнь 2019, бесплатный проект от Хороший программист
 
 ror_experience_general:
-  uk: Загальний досвід програмування на Ruby on Rails - 1 рік.
-  en: General Ruby on Rails programming experience - 1 year.
-  ru: Общий опыт программирования на Ruby on Rails - 1 год.
+  uk: Загальний досвід програмування на Ruby on Rails - 1 рік та 6 місяців.
+  en: General Ruby on Rails programming experience - 1 year and 6 months.
+  ru: Общий опыт программирования на Ruby on Rails - 1 год и 6 месяцев.
 
 ror_experience:
   uk: В процесі роботи над проектами отримав досвід роботи з популярними гемами devise, carrierwave, activestorage,
@@ -222,6 +222,21 @@ projects_title:
 #List of interesting Github repo/projects to include - optional
 projects:
   - title:
+      uk: TODO's - Тестове, управління завданнями
+      en: TODO's-  Test, task management
+      ru: TODO's - Тестовое, управление задачами
+    url: https://gitlab.com/olegshevtsov1/todos
+  - title:
+      uk: UA_ENERGY - Українська енергетика (backend, frontend)
+      en: UA_ENERGY - Ukrainian energy (backend, frontend)
+      ru: UA_ENERGY - Украинская енергетика (backend)
+    url: http://ua-energy.org/
+  - title:
+      uk: COINFLEX - Біржа ф'ючерсів на криптовалюту (rspec)
+      en: COINFLEX - Cryptocurrency Futures Exchange (rspec)
+      ru: COINFLEX - Обмен фьючерсов на криптовалюту (rspec)
+    url: https://coinflex.com/
+  - title:
       uk: VIVATRICKO - Шапки оптом від виробника (backend)
       en: VIVATRICKO - Wholesale hats from the producer (backend)
       ru: VIVATRICKO - Шапки оптом от производителяn (backend)
@@ -295,7 +310,7 @@ about_myself_title:
 
 about_myself:
   uk: <h5>Досягнення</h5>
-    <p>Я займаюсь  розробкою на Ruby on Rails 1 рік , і за цей час я створив 3 власних проекти, 2 з них викладені в публичному репозиторії, а один знаходиться у приватному репозиторії GitLab.
+    <p>Я займаюсь  розробкою на Ruby on Rails 1 рік та 6 місяців, і за цей час я створив 3 власних проекти, 2 з них викладені в публичному репозиторії, а один знаходиться у приватному репозиторії GitLab.
     Окрім того, я приймав участь в командній роботі. Це 3 проекта, що знаходятся в приватному репозиторії, а сайти завернуто в продакшн.
     Посилання на публичні репозиторії, а також сайти на продакшн можна знайти в моєму CV - розділ <a href="#projects">Проекти.</a></p>
     <h5>Відношення до роботи</h5>
@@ -317,7 +332,7 @@ about_myself:
     <li><a href="https://www.youtube.com/watch?v=0MKOrDGVdNI">Алексей Мышкин - Розкрию своє серце навстіж.</a></li>
     </ul>
   ru:  <h5>Достижения</h5>
-    <p>Я занимаюсь разработкой на Ruby on Rails 1 год и 3 месяца, и за это время я создал 3 собственных проекта, 2 из которых выложены в публичном репозитории а один находится в приватном репозитории GitLab.
+    <p>Я занимаюсь разработкой на Ruby on Rails 1 год и 6 месяцев, и за это время я создал 3 собственных проекта, 2 из которых выложены в публичном репозитории а один находится в приватном репозитории GitLab.
     Кроме того, я учавствовал в командной работе. Это 3 проекта, которые находятся в приватном репозитории, а сайты завернуты в продакшн.
     Ссылки на публичные репозитории, а так же сайты на продакшн можна найти в моем CV - раздел <a href="#projects">Проекты.</a></p>
     <h5>Отношение к работе</h5>
@@ -342,7 +357,7 @@ about_myself:
     </ul>
   en:
     <h5>Achievements</h5>
-    <p>I have been developing on Ruby on Rails for 1 year and 3 months, and during this time I created 3 of my own projects, 2 of which are posted in a public repository and one is in a private GitLab repository.</p>
+    <p>I have been developing on Ruby on Rails for 1 year and 6 months, and during this time I created 3 of my own projects, 2 of which are posted in a public repository and one is in a private GitLab repository.</p>
     <p>Furthermore, I participated in teamwork. These are 3 projects that are in a private repository, and sites are hosted in production.
     Links to public repositories, as well as production sites can be found in my CV - section <a href="#projects">Projects.</a></p>
     <h5>Attitude to work</h5>

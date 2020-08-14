@@ -94,15 +94,10 @@ programming_experience_title:
   en: Programming experience
   ru: Опыт программирования
 
-programming_experience_hartl:
-  uk: грудень 2018 - квітень 2019, Rails Winter 19
-  en: December 2018 - April 2019, Rails Winter 19
-  ru: декабрь 2018  - апрель 2019, Rails Winter 19
-
-programming_experience_codecademy:
-  uk: січень 2019  , Codecademy
-  en: January 2019  , Codecademy
-  ru: январь 2019  , Codecademy
+programming_experience_pivorak:
+  uk: червень 2020 - липень 2020, Ruby Summer Course by Pivorak
+  en: June 2019 - July 2019, Ruby Summer Course by Pivorak
+  ru: июнь 2020  - июль 2020, Ruby Summer Course by Pivorak
 
 programming_experience_hasbrains:
   uk: лютий 2019 - травень 2019, скрінкасти по Ruby, Rails
@@ -114,10 +109,15 @@ programming_experience_rubyrash:
   en: June 2019, a free project from Good programmer
   ru: июнь 2019, бесплатный проект от Хороший программист
 
-ror_experience_general:
-  uk: Загальний досвід програмування на Ruby on Rails - 1 рік та 6 місяців.
-  en: General Ruby on Rails programming experience - 1 year and 6 months.
-  ru: Общий опыт программирования на Ruby on Rails - 1 год и 6 месяцев.
+programming_experience_codecademy:
+  uk: січень 2019  , Codecademy
+  en: January 2019  , Codecademy
+  ru: январь 2019  , Codecademy
+
+programming_experience_hartl:
+  uk: грудень 2018 - квітень 2019, Rails Winter 19
+  en: December 2018 - April 2019, Rails Winter 19
+  ru: декабрь 2018  - апрель 2019, Rails Winter 19
 
 ror_experience:
   uk: В процесі роботи над проектами отримав досвід роботи з популярними гемами devise, carrierwave, activestorage,
@@ -136,15 +136,15 @@ frontend_title:
 frontends:
   - title:
       uk:
-        description: Жовтень 2019 -
-        description_url: ReactJS.org
+        description: Березень 2020 -
+        description_url:  React JS. Практичний Курс 2020 (вкл. Хуки, Класси, Redux)
       en:
-        description: October 2019 -
-        description_url: ReactJS.org
+        description: March 2020 -
+        description_url: React JS. Practical Course 2020 (etc. Hooks, Classes, Redux)
       ru:
-        description: Октябрь 2019 -
-        description_url: ReactJS.org
-    url: https://reactjs.org/docs/getting-started.html
+        description: Март 2020 -
+        description_url: React JS. Практический Курс 2020 (вкл. Хуки, Классы, Redux)
+    url: https://www.udemy.com/course/react-2020-complete-guide/
   - title:
       uk:
         description: Листопад 2019 -
@@ -156,6 +156,17 @@ frontends:
         description: Ноябрь 2019 -
         description_url: ReactJS Live
     url: https://www.youtube.com/playlist?list=PLevjgbzdU8UxfbRrLb_ILGXRAHbeJT7w2
+  - title:
+      uk:
+        description: Жовтень 2019 -
+        description_url: ReactJS.org
+      en:
+        description: October 2019 -
+        description_url: ReactJS.org
+      ru:
+        description: Октябрь 2019 -
+        description_url: ReactJS.org
+    url: https://reactjs.org/docs/getting-started.html
 
 other_skills_title:
   uk: Інші навички
@@ -221,6 +232,11 @@ projects_title:
 
 #List of interesting Github repo/projects to include - optional
 projects:
+  - title:
+      uk: Grain'sWay - Інкубатор стартапів
+      en: Grain'sWay-  Startup incubator
+      ru: Grain'sWay - Инкубатор стартапов
+    url: https://grains-way.herokuapp.com/
   - title:
       uk: TODO's - Тестове, управління завданнями
       en: TODO's-  Test, task management
@@ -290,7 +306,7 @@ previous_jobs_title:
   ru: Предыдущие места работы
 
 ukrtelecom:
-  uk: 2004-2019 — ПАТ "Укртелеком", Старший інжнер експуатації мережі
+  uk: 2004-2019 — ПАТ "Укртелеком", Старший інжнер експлуатації мережі
   en: 2004-2019 — JSC "Ukrtelecom", Senior Network Engineer
   ru: 2004-2019 — ПАO "Укртелеком", Старший инженер експлуатации сети
 
@@ -306,13 +322,31 @@ support_sites:
   ru: 2011-2017 — Разработка, поддержка CMS - обновление, размещение на хостинге, перенос на другой хостинг, разработка шаблонов, разработка плагинов, настройки плагинов, исправления ошибок, добавление контента, SEO оптимизация.
 
 about_myself_title:
+  uk: Про мене
+  en: About myself
   ru: О себе
 
-about_myself:
-  uk: <h5>Досягнення</h5>
-    <p>Я займаюсь  розробкою на Ruby on Rails 1 рік та 6 місяців, і за цей час я створив 3 власних проекти, 2 з них викладені в публичному репозиторії, а один знаходиться у приватному репозиторії GitLab.
+achievements_title:
+  uk: Досягнення
+  en: Achievements
+  ru: Достижения
+
+achievements:
+  uk:
+    <p>Я займаюсь розробкою на Ruby on Rails 1 рік та 6 місяців, і за цей час я створив 3 власних проекти, 2 з них викладені в публичному репозиторії, а один знаходиться у приватному репозиторії GitLab.
     Окрім того, я приймав участь в командній роботі. Це 3 проекта, що знаходятся в приватному репозиторії, а сайти завернуто в продакшн.
     Посилання на публичні репозиторії, а також сайти на продакшн можна знайти в моєму CV - розділ <a href="#projects">Проекти.</a></p>
+  ru:
+    <p>Я занимаюсь разработкой на Ruby on Rails 1 год и 6 месяцев, и за это время я создал 3 собственных проекта, 2 из которых выложены в публичном репозитории а один находится в приватном репозитории GitLab.
+    Кроме того, я учавствовал в командной работе. Это 3 проекта, которые находятся в приватном репозитории, а сайты завернуты в продакшн.
+    Ссылки на публичные репозитории, а так же сайты на продакшн можна найти в моем CV - раздел <a href="#projects">Проекты.</a></p>
+  en:
+    <p>I have been developing on Ruby on Rails for 1 year and 6 months, and during this time I created 3 of my own projects, 2 of which are posted in a public repository and one is in a private GitLab repository.</p>
+    <p>Furthermore, I participated in teamwork. These are 3 projects that are in a private repository, and sites are hosted in production.
+    Links to public repositories, as well as production sites can be found in my CV - section <a href="#projects">Projects.</a></p>
+
+about_myself:
+  uk:
     <h5>Відношення до роботи</h5>
     <p>Я вибудовую конструктивні відношення в работі. Де в першу чергу присутні порядок та послідовність дій. Стараюсь створювати  умови, де повсякденна работа буде зводитися до виконання простих чітких задач , висуваючи їх на перший план повсякденних обов'язків.</p>
     <p>На більш складні задачі, по яким є невирішені питання, відводжу більшу частину часу. Що дозволяє в комфортні строки обдумати можливі шляхи вирішення для досягнення оптимального результату.
@@ -331,10 +365,7 @@ about_myself:
     <li><a href="https://www.youtube.com/watch?v=Pl8OlkkwRpc"> How the blockchain is changing money and business | Don Tapscott | TED Channel </a></li>
     <li><a href="https://www.youtube.com/watch?v=0MKOrDGVdNI">Алексей Мышкин - Розкрию своє серце навстіж.</a></li>
     </ul>
-  ru:  <h5>Достижения</h5>
-    <p>Я занимаюсь разработкой на Ruby on Rails 1 год и 6 месяцев, и за это время я создал 3 собственных проекта, 2 из которых выложены в публичном репозитории а один находится в приватном репозитории GitLab.
-    Кроме того, я учавствовал в командной работе. Это 3 проекта, которые находятся в приватном репозитории, а сайты завернуты в продакшн.
-    Ссылки на публичные репозитории, а так же сайты на продакшн можна найти в моем CV - раздел <a href="#projects">Проекты.</a></p>
+  ru:
     <h5>Отношение к работе</h5>
     <p>Я выстраиваю конструктивные отношения в работе. Где в первую очередь присутствует порядок и последовательность действий. Стараюсь создавать условия, где повседневная работа будет сводиться к выполнению
     простых четких задач, выдвигая их на первый план повседневных обязанностей.</p>
@@ -356,10 +387,6 @@ about_myself:
     <li><a href="https://www.youtube.com/watch?v=0MKOrDGVdNI">Алексей Мышкин - Распахну свое сердце настежь.</a></li>
     </ul>
   en:
-    <h5>Achievements</h5>
-    <p>I have been developing on Ruby on Rails for 1 year and 6 months, and during this time I created 3 of my own projects, 2 of which are posted in a public repository and one is in a private GitLab repository.</p>
-    <p>Furthermore, I participated in teamwork. These are 3 projects that are in a private repository, and sites are hosted in production.
-    Links to public repositories, as well as production sites can be found in my CV - section <a href="#projects">Projects.</a></p>
     <h5>Attitude to work</h5>
     <p>I build constructive relationships at work. Where in the first place is the order and sequence of actions. I try to create conditions where everyday work will be reduced to fulfillment  simple, clear tasks, putting them first.</p>
     <p>For more complex tasks, for which there are unresolved issues, I devote more time. That allows you to think in a comfortable time possible solutions to achieve the optimal result.

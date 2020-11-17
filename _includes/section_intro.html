@@ -19,6 +19,14 @@
                         <hr/>
 
                         <ul style="list-style-type:none; margin: 3px">
+                            {% for project-last in site.projects-last %}
+                            <li>
+                                <a href="{{project-last.url}}">{{project-last.title[page.lang]}}</a> <b><a href="{{project-last.repo}}">REPO</a></b>
+                            </li>
+                            {% endfor %}
+                        </ul>
+
+                        <ul style="list-style-type:none; margin: 3px">
                             {% for project in site.projects %}
                             <li>
                                 <a href="{{project.url}}">{{project.title[page.lang]}}</a>
@@ -41,7 +49,7 @@
                                 <a href="https://pivorak.com/ruby-course">Ruby Summer Course</a></li>
                             <li>{{ site.programming_experience_hasbrains[page.lang] }} -
                                 <a href="https://www.youtube.com/user/RubyScreencastsRu/videos">Screencasts HasBrains</a></li>
-                            <li>{{ site.programming_experience_rubyrash[page.lang] }} - <a href="https://rubyrush.ru/">RubyRash</a></li>
+<!--                            <li>{{ site.programming_experience_rubyrash[page.lang] }} - <a href="https://rubyrush.ru/">RubyRash</a></li>-->
                             <li>{{ site.programming_experience_codecademy[page.lang] }} -
                                 <a href="https://www.codecademy.com/profiles/olegshevtsov1">Learn Ruby</a></li>
                             <li>{{ site.programming_experience_hartl[page.lang] }} -

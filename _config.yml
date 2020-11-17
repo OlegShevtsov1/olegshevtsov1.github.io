@@ -96,7 +96,7 @@ programming_experience_title:
 
 programming_experience_pivorak:
   uk: червень 2020 - липень 2020, Ruby Summer Course by Pivorak
-  en: June 2019 - July 2019, Ruby Summer Course by Pivorak
+  en: June 2020 - July 2020, Ruby Summer Course by Pivorak
   ru: июнь 2020  - июль 2020, Ruby Summer Course by Pivorak
 
 programming_experience_hasbrains:
@@ -104,10 +104,10 @@ programming_experience_hasbrains:
   en: February 2019 - May 2019, Ruby, Rails screencasts
   ru: февраль 2019  - май 2019, скринкасты по Ruby, Rails
 
-programming_experience_rubyrash:
-  uk: червень 2019, безкоштовний проект від Хороший програміст
-  en: June 2019, a free project from Good programmer
-  ru: июнь 2019, бесплатный проект от Хороший программист
+#programming_experience_rubyrash:
+#  uk: червень 2019, безкоштовний проект від Хороший програміст
+#  en: June 2019, a free project from Good programmer
+#  ru: июнь 2019, бесплатный проект от Хороший программист
 
 programming_experience_codecademy:
   uk: січень 2019  , Codecademy
@@ -121,11 +121,11 @@ programming_experience_hartl:
 
 ror_experience:
   uk: В процесі роботи над проектами отримав досвід роботи з популярними гемами devise, carrierwave, activestorage,
-    capistrano, sidekiq, rspec, factory_bot, simple_form, haml, slim,  хостингом Heroku, PostgreSQL, сервісом GitHub, Trello і безліччю іншого.
+    capistrano, sidekiq, rspec, factory_bot, pundit, aasm, draper, simple_form, haml, slim,  хостингом Heroku, PostgreSQL, сервісом GitHub, Trello і безліччю іншого.
   en: In the process of working on projects, I gained experience with the popular gems devise, carrierwave, activestorage,
-    capistrano, sidekiq, rspec, factory_bot, simple_form, haml, slim  Heroku hosting, PostgreSQL, GitHab, Trello and many more.
+    capistrano, sidekiq, rspec, factory_bot, pundit, aasm, draper, simple_form, haml, slim  Heroku hosting, PostgreSQL, GitHab, Trello and many more.
   ru: В процессе работы над проектами получил опыт работы с популярными гемами devise, carrierwave, activestorage,
-    capistrano, sidekiq, rspec, factory_bot, simple_form, haml, slim хостингом Heroku, PostgreSQL, сервисом GitHab, Trello и множеством другого.
+    capistrano, sidekiq, rspec, factory_bot, pundit, aasm, draper, simple_form, haml, slim хостингом Heroku, PostgreSQL, сервисом GitHab, Trello и множеством другого.
 
 frontend_title:
   uk: React
@@ -174,9 +174,9 @@ other_skills_title:
   ru: Другие навыки
 
 english:
-  uk: лютий 2016 - травень 2019 Англійська, B1
-  en: February 2016 - Spring 2019 English, B1
-  ru: февраль 2016  - май 2019 Английский, B1
+  uk: лютий 2016 - травень 2019 Англійська, A2
+  en: February 2016 - Spring 2019 English, A2
+  ru: февраль 2016  - май 2019 Английский, A2
 
 english_flash:
   uk: Школа англійської мови FLASH
@@ -230,23 +230,44 @@ projects_title:
   en: Projects
   ru: Проекты
 
-#List of interesting Github repo/projects to include - optional
-projects:
+projects-last:
   - title:
-      uk: Grain'sWay - Інкубатор стартапів
-      en: Grain'sWay-  Startup incubator
-      ru: Grain'sWay - Инкубатор стартапов
-    url: https://grains-way.herokuapp.com/
+      uk: TODOListApi - API, управління завданнями
+      en: TODOListApi-  API, task management
+      ru: TODOListApi - API, управление задачами
+    url: https://todo-api-os.herokuapp.com/
+    repo: https://github.com/OlegShevtsov1/todo_list_api/
+  - title:
+      uk: BookStore - Інтернет магазин книг
+      en: BookStore-  Online Book Store
+      ru: BookStore - Интернет магазин книг
+    url: https://bookstoreos.herokuapp.com/
+    repo: https://github.com/OlegShevtsov1/BookStore/pulls
+  - title:
+      uk: Codebreaker Game - Гра підбору коду
+      en: Codebreaker Game -  Game of code breake
+      ru: Codebreaker Game - Игра подбора кода
+    url: https://codebreakeros.herokuapp.com/
+    repo: https://github.com/OlegShevtsov1/codebreaker_web_os/pull/1
   - title:
       uk: TODO's - Тестове, управління завданнями
       en: TODO's-  Test, task management
       ru: TODO's - Тестовое, управление задачами
-    url: https://gitlab.com/olegshevtsov1/todos
+    url: http://todos.up.km.ua:8080/
+    repo: https://gitlab.com/olegshevtsov1/todos
+
+#List of interesting Github repo/projects to include - optional
+projects:
   - title:
       uk: UA_ENERGY - Українська енергетика (backend, frontend)
       en: UA_ENERGY - Ukrainian energy (backend, frontend)
       ru: UA_ENERGY - Украинская енергетика (backend)
     url: http://ua-energy.org/
+  - title:
+      uk: Grain'sWay - Інкубатор стартапів
+      en: Grain'sWay-  Startup incubator
+      ru: Grain'sWay - Инкубатор стартапов
+    url: https://grains-way.herokuapp.com/
   - title:
       uk: COINFLEX - Біржа ф'ючерсів на криптовалюту (rspec)
       en: COINFLEX - Cryptocurrency Futures Exchange (rspec)
@@ -333,16 +354,16 @@ achievements_title:
 
 achievements:
   uk:
-    <p>Я займаюсь розробкою на Ruby on Rails 1 рік та 6 місяців, і за цей час я створив 3 власних проекти, 2 з них викладені в публичному репозиторії, а один знаходиться у приватному репозиторії GitLab.
-    Окрім того, я приймав участь в командній роботі. Це 3 проекта, що знаходятся в приватному репозиторії, а сайти завернуто в продакшн.
+    <p>Я займаюсь розробкою на Ruby on Rails 1 рік та 6 місяців, і за цей час я створив 5 власних проекти, 4 з них викладені в публичному репозиторії, а один знаходиться у приватному репозиторії GitLab.
+    Окрім того, я приймав участь в командній роботі. Це 4 проекта, що знаходятся в приватному репозиторії, а сайти завернуто в продакшн.
     Посилання на публичні репозиторії, а також сайти на продакшн можна знайти в моєму CV - розділ <a href="#projects">Проекти.</a></p>
   ru:
-    <p>Я занимаюсь разработкой на Ruby on Rails 1 год и 6 месяцев, и за это время я создал 3 собственных проекта, 2 из которых выложены в публичном репозитории а один находится в приватном репозитории GitLab.
-    Кроме того, я учавствовал в командной работе. Это 3 проекта, которые находятся в приватном репозитории, а сайты завернуты в продакшн.
+    <p>Я занимаюсь разработкой на Ruby on Rails 1 год и 6 месяцев, и за это время я создал 5 собственных проекта, 5 из которых выложены в публичном репозитории а один находится в приватном репозитории GitLab.
+    Кроме того, я учавствовал в командной работе. Это 4 проекта, которые находятся в приватном репозитории, а сайты завернуты в продакшн.
     Ссылки на публичные репозитории, а так же сайты на продакшн можна найти в моем CV - раздел <a href="#projects">Проекты.</a></p>
   en:
-    <p>I have been developing on Ruby on Rails for 1 year and 6 months, and during this time I created 3 of my own projects, 2 of which are posted in a public repository and one is in a private GitLab repository.</p>
-    <p>Furthermore, I participated in teamwork. These are 3 projects that are in a private repository, and sites are hosted in production.
+    <p>I have been developing on Ruby on Rails for 1 year and 6 months, and during this time I created 5 of my own projects, 5 of which are posted in a public repository and one is in a private GitLab repository.</p>
+    <p>Furthermore, I participated in teamwork. These are 4 projects that are in a private repository, and sites are hosted in production.
     Links to public repositories, as well as production sites can be found in my CV - section <a href="#projects">Projects.</a></p>
 
 about_myself:

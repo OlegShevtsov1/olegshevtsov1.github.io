@@ -1,0 +1,139 @@
+#
+# Be aware that even a small syntax error here can lead to failures in output.
+#
+
+sidebar:
+    about: False # set to False or comment line if you want to remove the "how to use?" in the sidebar
+    education: False # set to False if you want education in main section instead of in sidebar
+
+    # Profile information
+    name: Oleg Shevtsov
+    tagline: Ruby Developer
+    avatar: 1619378700867.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+
+    # Sidebar links
+    email: olegshevtsov1@gmail.com
+    phone:
+    timezone: EEST Timezone
+    citizenship:
+    website:
+    linkedin: olegshevtsov1
+    xing:
+    github: olegshevtsov1
+    telegram: olegshevtsov1
+    gitlab:
+    bitbucket:
+    twitter:
+    stack-overflow: # Number/Username, e.g. 123456/alandoe
+    codewars:
+    goodreads: # Number-Username, e.g. 123456-alandoe
+    pdf: https://olegshevtsov1.github.io/olegshevtsov1-github-io-print.pdf
+
+    languages:
+      title: Languages
+      info:
+        - idiom: English
+          level: B1
+
+    interests:
+      title: Interests
+      info:
+        - item: Chess
+          link: https://www.chess.com/member/olegshevtsov1
+
+        - item: Blockchain
+          link: https://www.youtube.com/watch?v=Pl8OlkkwRpc
+
+career-profile:
+    title: Career Profile
+    summary: |
+      Results-oriented professional committed to building a successful career in software development.
+      Ability to develop custom software applications and update existing programs
+      to refine components like data storage capacities and cybersecurity.      
+      Seeking a position to bring an outside-of-the-box approach and exceptional ability to identify problems
+      and create effective solutions that keep projects on track and under budget.
+education:
+    title: Education
+    info:
+      - degree: Ruby Summer Course
+        university: Pivorak, Lviv (remote)
+        time: 2020
+        details: |
+          Ruby on Rails course with practice
+      - degree: Ruby course
+        university: RubyGarage, Dnipro (remote)
+        time: 2020
+        details: |
+          The complex Ruby on Rails course
+      - degree: Computer Engineering M.Sc.
+        university: Khmelnytskyi National University
+        time: 1999 - 2004
+        details: |
+          The main focus of the educational program and specialization: Special education in information technology with
+          a degree in computer engineering. The emphasis of the program is on the ability to solve complex specialized 
+          problems and practical problems in the field of computer engineering related to the development of system and
+          application software, design, deployment and maintenance of computer systems and networks, their protection
+          and system administration
+experiences:
+    title: Experiences
+    info:
+      - role: Ruby Developer
+        time: 2021 - Present
+        company: Ralabs, Lviv, remote (full time)
+        details: |
+          Throughout the past few years, I have dedicated my efforts to a long-term healthcare project,
+          where I assumed the responsibility of implementing the backend using Ruby on Rails and Restful API,
+          maintaining the database, conducting comprehensive testing, and managing the Postgres and AWS infrastructure.
+            -  Developing new features
+            -  Maintenance/Bug fixing
+            -  Test covering
+            -  Adding API endpoints
+            -  Supporting delayed jobs
+            -  Refactoring
+      - role: Ruby Developer
+        time: 2020 - 2021
+        company: IT Doors, Kiev, remote (part time)
+        details: |
+          Developing new features, SEO-optimizing, content maintaining
+            -  Developing new features
+            -  Maintenance/Bug fixing
+      - role: Ruby Developer
+        time: 2019 - 2020
+        company: Quantlife, remote (part time)
+        details: |
+          Bug fixing
+            -  Rspec
+      - role: Senior Network Engineer
+        time: 2004 - 2021
+        company: JSC Ukrtelecom, Khmelnitsky, on-site (full time)
+        details: |
+          Monitoring, analyzing, and resolving network hardware and software problems in a timely and accurate fashion.
+          Responsible for the implementation of customer projects for Business Units supported by Process IT in a timely manner
+          Analyse, diagnose and troubleshoot issues in the network
+            - Logical network level
+            - Physical network design
+            - VLANs
+skills:
+    title: Skills &amp; Proficiency
+
+    toolset:
+      - name: Ruby & Rails
+        level: 90%
+
+      - name: Javascript & jQuery
+        level: 70%
+
+      - name: HTML5 & CSS
+        level: 70%
+
+      - name: AWS on Terraform
+        level: 40%
+
+      - name: RDS & SQL
+        level: 80%
+
+      - name: Network System & Network Security
+        level: 90%
+
+footer: >
+    Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>

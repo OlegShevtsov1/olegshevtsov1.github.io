@@ -34,6 +34,8 @@ sidebar:
       info:
         - idiom: English
           level: B1
+        - idiom: Polish
+          level: A1
 
     interests:
       title: Interests
@@ -48,9 +50,7 @@ career-profile:
     title: Career Profile
     summary: |
       Results-oriented professional committed to building a successful career in software development.
-      Ability to develop custom software applications and update existing programs
-      to refine components like data storage capacities and cybersecurity.      
-      Seeking a position to bring an outside-of-the-box approach and exceptional ability to identify problems
+      I seek a position to bring an outside-of-the-box approach and exceptional ability to identify problems,
       and create effective solutions that keep projects on track and under budget.
 education:
     title: Education
@@ -78,7 +78,7 @@ experiences:
     title: Experiences
     info:
       - role: Ruby Developer
-        time: 2021 - Present
+        time: 2021 - 2024
         company: Ralabs, Lviv, remote (full time)
         details: |
           Throughout the past few years, I have dedicated my efforts to a long-term healthcare project,
@@ -87,8 +87,6 @@ experiences:
             -  Developing new features
             -  Maintenance/Bug fixing
             -  Test covering
-            -  Adding API endpoints
-            -  Supporting delayed jobs
             -  Refactoring
       - role: Ruby Developer
         time: 2020 - 2021
@@ -97,12 +95,6 @@ experiences:
           Developing new features, SEO-optimizing, content maintaining
             -  Developing new features
             -  Maintenance/Bug fixing
-      - role: Ruby Developer
-        time: 2019 - 2020
-        company: Quantlife, remote (part time)
-        details: |
-          Bug fixing
-            -  Rspec
       - role: Senior Network Engineer
         time: 2004 - 2021
         company: JSC Ukrtelecom, Khmelnitsky, on-site (full time)
@@ -118,22 +110,19 @@ skills:
 
     toolset:
       - name: Ruby & Rails
-        level: 90%
-
-      - name: Javascript & jQuery
         level: 70%
 
-      - name: HTML5 & CSS
-        level: 70%
+      - name: HTML5 & CSS & Javascript
+        level: 50%
 
       - name: AWS on Terraform
-        level: 40%
+        level: 30%
 
       - name: RDS & SQL
-        level: 80%
+        level: 60%
 
       - name: Network System & Network Security
-        level: 90%
+        level: 70%
 
 footer: >
     Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>

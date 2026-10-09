@@ -1,2167 +1,314 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Portfólio de Mateus Lemos Figueiredo, desenvolvedor Full Stack com experiência em desenvolvimento web, automação de testes, sustentação de sistemas e resolução de problemas."
-  >
-
-  <meta
-    name="keywords"
-    content="Mateus Lemos Figueiredo, desenvolvedor full stack, desenvolvedor web, React, TypeScript, JavaScript, Python, Flask, Playwright, automação de testes, sustentação de sistemas"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mateus Lemos Figueiredo (Jiyu Henko) — software engineer and founder focused on applied AI, developer tools, automation and AI-assisted software delivery.">
   <meta name="author" content="Mateus Lemos Figueiredo">
-  <meta name="theme-color" content="#080b14">
-
+  <meta name="theme-color" content="#071018">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-
-  <meta
-    property="og:title"
-    content="Mateus Lemos Figueiredo | Desenvolvedor Full Stack"
-  >
-
-  <meta
-    property="og:description"
-    content="Desenvolvimento web, automação, qualidade de software e sustentação de sistemas."
-  >
-
+  <meta property="og:title" content="Mateus Lemos Figueiredo | Applied AI & Software Engineering">
+  <meta property="og:description" content="Applied AI, developer tools, automation, customer-facing engineering and AI-assisted software delivery.">
   <meta property="og:image" content="profile.jpg">
-
-  <title>Mateus Lemos Figueiredo | Desenvolvedor Full Stack</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
-
+  <title>Mateus Lemos Figueiredo | Applied AI & Software Engineering</title>
   <style>
     :root {
-      --background: #080b14;
-      --background-soft: #0d1220;
-      --surface: rgba(18, 25, 45, 0.78);
-      --surface-strong: #12192d;
-      --surface-hover: #172039;
-
-      --primary: #7c83ff;
-      --primary-strong: #5b63f6;
-      --secondary: #22d3ee;
-      --success: #34d399;
-
-      --text: #f4f6fb;
-      --text-soft: #c8cedd;
-      --muted: #929bb0;
-
-      --border: rgba(255, 255, 255, 0.09);
-      --border-strong: rgba(124, 131, 255, 0.35);
-
-      --shadow-small: 0 15px 35px rgba(0, 0, 0, 0.18);
-      --shadow-large: 0 35px 90px rgba(0, 0, 0, 0.42);
-
-      --container: 1180px;
-      --radius-small: 12px;
-      --radius-medium: 20px;
-      --radius-large: 30px;
+      --bg:#071018;
+      --bg2:#0b1620;
+      --card:#0e1c27;
+      --card2:#112432;
+      --text:#eef5f7;
+      --muted:#a9bac2;
+      --line:#203642;
+      --accent:#7ce3c3;
+      --accent2:#8db7ff;
+      --max:1180px;
     }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    html {
-      scroll-padding-top: 100px;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      overflow-x: hidden;
-      font-family: "Inter", sans-serif;
-      color: var(--text);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
       background:
-        radial-gradient(
-          900px 600px at 5% -5%,
-          rgba(79, 70, 229, 0.25),
-          transparent 65%
-        ),
-        radial-gradient(
-          800px 600px at 95% 12%,
-          rgba(14, 165, 233, 0.17),
-          transparent 65%
-        ),
-        var(--background);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      opacity: 0.32;
-      background-image:
-        linear-gradient(
-          rgba(255, 255, 255, 0.025) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.025) 1px,
-          transparent 1px
-        );
-      background-size: 50px 50px;
-      mask-image: linear-gradient(to bottom, black, transparent 85%);
-    }
-
-    ::selection {
-      color: #ffffff;
-      background: rgba(124, 131, 255, 0.75);
-    }
-
-    a {
-      color: inherit;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(calc(100% - 40px), var(--container));
-      margin-inline: auto;
-    }
-
-    .skip-link {
-      position: fixed;
-      top: -100px;
-      left: 20px;
-      z-index: 999;
-      padding: 12px 18px;
-      color: #ffffff;
-      text-decoration: none;
-      background: var(--primary-strong);
-      border-radius: var(--radius-small);
-      transition: top 0.2s ease;
-    }
-
-    .skip-link:focus {
-      top: 20px;
-    }
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 100;
-      border-bottom: 1px solid transparent;
-      transition:
-        background-color 0.25s ease,
-        border-color 0.25s ease,
-        backdrop-filter 0.25s ease;
-    }
-
-    .navbar.scrolled {
-      background: rgba(8, 11, 20, 0.82);
-      border-color: var(--border);
-      backdrop-filter: blur(18px);
-    }
-
-    .navbar-content {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-    }
-
-    .brand-symbol {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      color: #ffffff;
-      font-size: 14px;
-      background:
-        linear-gradient(
-          135deg,
-          var(--primary),
-          var(--secondary)
-        );
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(91, 99, 246, 0.25);
-    }
-
-    .brand-text {
-      font-size: 15px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-links a {
-      padding: 10px 12px;
-      color: var(--text-soft);
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-      border-radius: 10px;
-      transition:
-        color 0.2s ease,
-        background-color 0.2s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .nav-contact {
-      border: 1px solid var(--border);
-    }
-
-    .menu-button {
-      width: 44px;
-      height: 44px;
-      display: none;
-      place-items: center;
-      color: var(--text);
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .menu-button span,
-    .menu-button span::before,
-    .menu-button span::after {
-      width: 19px;
-      height: 2px;
-      display: block;
-      position: relative;
-      background: currentColor;
-      border-radius: 4px;
-      transition: 0.2s ease;
-    }
-
-    .menu-button span::before,
-    .menu-button span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-    }
-
-    .menu-button span::before {
-      top: -6px;
-    }
-
-    .menu-button span::after {
-      top: 6px;
-    }
-
-    .menu-button.active span {
-      background: transparent;
-    }
-
-    .menu-button.active span::before {
-      top: 0;
-      transform: rotate(45deg);
-    }
-
-    .menu-button.active span::after {
-      top: 0;
-      transform: rotate(-45deg);
-    }
-
-    .hero {
-      min-height: 100vh;
-      padding: 150px 0 90px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-      gap: 80px;
-      align-items: center;
-    }
-
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 22px;
-      padding: 8px 14px;
-      color: #b6f7dc;
-      font-size: 13px;
-      font-weight: 600;
-      background: rgba(52, 211, 153, 0.09);
-      border: 1px solid rgba(52, 211, 153, 0.18);
-      border-radius: 999px;
-    }
-
-    .availability-dot {
-      width: 8px;
-      height: 8px;
-      position: relative;
-      background: var(--success);
-      border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.1);
-    }
-
-    .availability-dot::after {
-      content: "";
-      position: absolute;
-      inset: -5px;
-      border: 1px solid rgba(52, 211, 153, 0.45);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        opacity: 0.8;
-        transform: scale(0.65);
-      }
-
-      100% {
-        opacity: 0;
-        transform: scale(1.35);
-      }
-    }
-
-    .hero-eyebrow {
-      margin: 0 0 14px;
-      color: var(--secondary);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 760px;
-      margin: 0;
-      font-size: clamp(3rem, 7vw, 5.4rem);
-      line-height: 0.97;
-      letter-spacing: -0.065em;
-    }
-
-    .gradient-text {
-      color: transparent;
-      background:
-        linear-gradient(
-          110deg,
-          #ffffff 5%,
-          #aeb3ff 48%,
-          #55e4f5 100%
-        );
-      background-clip: text;
-      -webkit-background-clip: text;
-    }
-
-    .hero-description {
-      max-width: 690px;
-      margin: 28px 0 0;
-      color: var(--text-soft);
-      font-size: clamp(1rem, 1.7vw, 1.2rem);
-      line-height: 1.75;
-    }
-
-    .hero-description strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .button {
-      min-height: 52px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 22px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      border: 1px solid transparent;
-      border-radius: 14px;
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background-color 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-primary {
-      color: #ffffff;
-      background:
-        linear-gradient(
-          135deg,
-          var(--primary),
-          var(--primary-strong)
-        );
-      box-shadow: 0 18px 40px rgba(91, 99, 246, 0.28);
-    }
-
-    .button-primary:hover {
-      box-shadow: 0 22px 50px rgba(91, 99, 246, 0.38);
-    }
-
-    .button-secondary {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.045);
-      border-color: var(--border);
-    }
-
-    .button-secondary:hover {
-      background: rgba(255, 255, 255, 0.075);
-      border-color: rgba(255, 255, 255, 0.18);
-    }
-
-    .button-icon {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 46px;
-    }
-
-    .hero-highlight {
-      padding: 17px;
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-    }
-
-    .hero-highlight strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 14px;
-    }
-
-    .hero-highlight span {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .profile-wrapper {
-      max-width: 440px;
-      position: relative;
-      justify-self: end;
-    }
-
-    .profile-wrapper::before {
-      content: "";
-      position: absolute;
-      inset: 12% -10% -10% 8%;
-      z-index: -1;
-      opacity: 0.55;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(124, 131, 255, 0.7),
-          rgba(34, 211, 238, 0.4)
-        );
-      border-radius: 45%;
-      filter: blur(70px);
-    }
-
-    .profile-card {
-      position: relative;
-      overflow: hidden;
-      padding: 12px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.13),
-          rgba(255, 255, 255, 0.025)
-        );
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 34px;
-      box-shadow: var(--shadow-large);
-      backdrop-filter: blur(16px);
-    }
-
-    .profile-card img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 25px;
-    }
-
-    .profile-status {
-      position: absolute;
-      right: 26px;
-      bottom: 26px;
-      left: 26px;
-      padding: 17px 18px;
-      background: rgba(8, 11, 20, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      backdrop-filter: blur(16px);
-    }
-
-    .profile-status strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 14px;
-    }
-
-    .profile-status span {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    main {
-      overflow: hidden;
-    }
-
-    .section {
-      padding: 105px 0;
-    }
-
-    .section-soft {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.018);
-    }
-
-    .section-header {
-      max-width: 760px;
-      margin-bottom: 48px;
-    }
-
-    .section-header.centered {
-      margin-inline: auto;
-      text-align: center;
-    }
-
-    .section-label {
-      margin: 0 0 12px;
-      color: var(--secondary);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.35rem);
-      line-height: 1.08;
-      letter-spacing: -0.05em;
-    }
-
-    .section-description {
-      margin: 18px 0 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.75;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
-      gap: 56px;
-      align-items: start;
-    }
-
-    .about-text {
-      color: var(--text-soft);
-      font-size: 17px;
-      line-height: 1.85;
-    }
-
-    .about-text p {
-      margin: 0 0 20px;
-    }
-
-    .about-text strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    .competencies {
-      display: grid;
-      gap: 14px;
-    }
-
-    .competency {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 15px;
-      padding: 19px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-    }
-
-    .competency-number {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      color: #dfe1ff;
-      font-size: 12px;
-      font-weight: 800;
-      background: rgba(124, 131, 255, 0.1);
-      border: 1px solid rgba(124, 131, 255, 0.19);
-      border-radius: 12px;
-    }
-
-    .competency h3 {
-      margin: 1px 0 7px;
-      font-size: 15px;
-    }
-
-    .competency p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .experience-list {
-      position: relative;
-      display: grid;
-      gap: 20px;
-    }
-
-    .experience-item {
-      display: grid;
-      grid-template-columns: 185px minmax(0, 1fr);
-      gap: 34px;
-      padding: 30px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-medium);
-      box-shadow: var(--shadow-small);
-    }
-
-    .experience-period {
-      color: var(--secondary);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .experience-content h3 {
-      margin: 0;
-      font-size: 21px;
-      letter-spacing: -0.025em;
-    }
-
-    .experience-company {
-      display: block;
-      margin-top: 7px;
-      color: var(--text-soft);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .experience-content p {
-      margin: 16px 0 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 19px;
-    }
-
-    .tag {
-      padding: 8px 11px;
-      color: #c7cafa;
-      font-size: 11px;
-      font-weight: 600;
-      background: rgba(124, 131, 255, 0.08);
-      border: 1px solid rgba(124, 131, 255, 0.14);
-      border-radius: 999px;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .project-card {
-      min-height: 100%;
-      position: relative;
-      overflow: hidden;
-      padding: 30px;
-      background:
-        linear-gradient(
-          155deg,
-          rgba(255, 255, 255, 0.065),
-          rgba(255, 255, 255, 0.018)
-        );
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background-color 0.25s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--border-strong);
-      background-color: var(--surface-hover);
-    }
-
-    .project-card::after {
-      content: "";
-      width: 180px;
-      height: 180px;
-      position: absolute;
-      top: -90px;
-      right: -90px;
-      pointer-events: none;
-      opacity: 0.22;
-      background: var(--primary);
-      border-radius: 50%;
-      filter: blur(65px);
-    }
-
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 24px;
-    }
-
-    .project-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      color: #dfe2ff;
-      font-size: 13px;
-      font-weight: 800;
-      background: rgba(124, 131, 255, 0.1);
-      border: 1px solid rgba(124, 131, 255, 0.2);
-      border-radius: 15px;
-    }
-
-    .project-type {
-      align-self: center;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .project-card h3 {
-      margin: 0;
-      font-size: 22px;
-      line-height: 1.25;
-      letter-spacing: -0.035em;
-    }
-
-    .project-summary {
-      margin: 14px 0 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .project-section {
-      margin-top: 22px;
-    }
-
-    .project-section-title {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--text-soft);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .project-section p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    .project-details {
-      margin-top: 22px;
-      border-top: 1px solid var(--border);
-    }
-
-    .project-details summary {
-      padding-top: 18px;
-      color: var(--text-soft);
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 700;
-      list-style: none;
-    }
-
-    .project-details summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .project-details summary::after {
-      content: "+";
-      float: right;
-      color: var(--secondary);
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    .project-details[open] summary::after {
-      content: "−";
-    }
-
-    .project-details ul {
-      margin: 15px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.75;
-    }
-
-    .technology-groups {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .technology-group {
-      padding: 26px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-    }
-
-    .technology-group h3 {
-      margin: 0 0 18px;
-      font-size: 16px;
-    }
-
-    .technology-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .technology-list span {
-      padding: 9px 11px;
-      color: var(--text-soft);
-      font-size: 12px;
-      background: rgba(255, 255, 255, 0.045);
-      border: 1px solid rgba(255, 255, 255, 0.065);
-      border-radius: 9px;
-    }
-
-    .work-style-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 15px;
-    }
-
-    .work-style-card {
-      padding: 24px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-    }
-
-    .work-style-card span {
-      display: block;
-      margin-bottom: 16px;
-      color: var(--secondary);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .work-style-card h3 {
-      margin: 0 0 10px;
-      font-size: 16px;
-    }
-
-    .work-style-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    .contact-card {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 40px;
-      align-items: center;
-      padding: 52px;
-      background:
-        linear-gradient(
-          130deg,
-          rgba(91, 99, 246, 0.18),
-          rgba(34, 211, 238, 0.07)
-        );
-      border: 1px solid rgba(124, 131, 255, 0.25);
-      border-radius: 30px;
-    }
-
-    .contact-card::after {
-      content: "";
-      width: 300px;
-      height: 300px;
-      position: absolute;
-      right: -130px;
-      bottom: -190px;
-      pointer-events: none;
-      background: rgba(34, 211, 238, 0.2);
-      border-radius: 50%;
-      filter: blur(65px);
-    }
-
-    .contact-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .contact-content h2 {
-      max-width: 720px;
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.15rem);
-      line-height: 1.1;
-      letter-spacing: -0.05em;
-    }
-
-    .contact-content p {
-      max-width: 650px;
-      margin: 18px 0 0;
-      color: var(--text-soft);
-      line-height: 1.75;
-    }
-
-    .contact-actions {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-actions .button {
-      min-width: 210px;
-    }
-
-    footer {
-      padding: 38px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .footer-name {
-      color: var(--text-soft);
-      font-weight: 600;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover {
-      color: #ffffff;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition:
-        opacity 0.6s ease,
-        transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    :focus-visible {
-      outline: 3px solid rgba(34, 211, 238, 0.55);
-      outline-offset: 4px;
-    }
-
-    @media (max-width: 1000px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-      }
-
-      .profile-wrapper {
-        width: min(100%, 480px);
-        justify-self: center;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .technology-groups {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .work-style-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-card {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-actions {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .container {
-        width: min(calc(100% - 28px), var(--container));
-      }
-
-      .navbar-content {
-        min-height: 68px;
-      }
-
-      .brand-text {
-        display: none;
-      }
-
-      .menu-button {
-        display: grid;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: 68px;
-        right: 14px;
-        left: 14px;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 12px;
-        background: rgba(13, 18, 32, 0.98);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: var(--shadow-large);
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 13px 14px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 120px 0 75px;
-      }
-
-      h1 {
-        font-size: clamp(2.8rem, 15vw, 4.5rem);
-      }
-
-      .hero-highlights {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 78px 0;
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 24px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .technology-groups {
-        grid-template-columns: 1fr;
-      }
-
-      .work-style-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-card {
-        padding: 32px 24px;
-      }
-
-      .contact-actions {
-        flex-direction: column;
-      }
-
-      .contact-actions .button {
-        width: 100%;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .button {
-        width: 100%;
-      }
-
-      .profile-status {
-        right: 20px;
-        bottom: 20px;
-        left: 20px;
-      }
-
-      .project-card {
-        padding: 24px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
+        radial-gradient(900px 500px at 10% -10%,rgba(124,227,195,.14),transparent 65%),
+        radial-gradient(850px 500px at 100% 0%,rgba(141,183,255,.12),transparent 65%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    nav{
+      position:sticky;top:0;z-index:10;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:rgba(7,16,24,.86);
+      backdrop-filter:blur(16px)
+    }
+    .nav-inner{
+      min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px
+    }
+    .brand{text-decoration:none;font-weight:800;letter-spacing:-.03em}
+    .nav-links{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-links a{
+      text-decoration:none;color:var(--muted);font-size:14px;padding:8px 10px;border-radius:8px
+    }
+    .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+    header{padding:96px 0 72px}
+    .eyebrow{
+      display:inline-block;margin-bottom:18px;
+      color:var(--accent);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase
+    }
+    h1{
+      max-width:900px;margin:0;font-size:clamp(3.1rem,8vw,6.6rem);
+      line-height:.96;letter-spacing:-.065em
+    }
+    .preferred{display:block;color:var(--muted);font-size:.28em;letter-spacing:-.02em;margin-top:18px;font-weight:600}
+    .hero-copy{
+      max-width:780px;margin:28px 0 0;color:var(--muted);
+      font-size:clamp(1.05rem,2vw,1.3rem)
+    }
+    .hero-copy strong{color:var(--text)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;min-height:48px;
+      padding:0 18px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;
+      border:1px solid var(--line);background:rgba(255,255,255,.03)
+    }
+    .btn.primary{background:var(--accent);color:#052019;border-color:transparent}
+    .btn:hover{transform:translateY(-1px)}
+    .stats{
+      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:48px
+    }
+    .stat{
+      padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)
+    }
+    .stat strong{display:block;font-size:1.05rem}
+    .stat span{color:var(--muted);font-size:13px}
+    section{padding:72px 0}
+    .section-head{display:grid;grid-template-columns:.55fr 1.45fr;gap:44px;margin-bottom:30px}
+    .section-head h2{margin:0;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.04em}
+    .section-head p{margin:0;color:var(--muted);max-width:760px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .card{
+      border:1px solid var(--line);border-radius:20px;padding:24px;
+      background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015))
+    }
+    .card h3{margin:0 0 8px;font-size:1.15rem}
+    .card p{margin:0;color:var(--muted)}
+    .card .meta{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+    .card a.more{display:inline-block;margin-top:16px;color:var(--accent2);font-weight:700;text-decoration:none}
+    .timeline{display:grid;gap:14px}
+    .role{
+      display:grid;grid-template-columns:220px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)
+    }
+    .role:first-child{border-top:0}
+    .role .when{color:var(--muted);font-size:14px}
+    .role h3{margin:0 0 6px}
+    .role p{margin:0;color:var(--muted)}
+    .role ul{margin:14px 0 0;padding-left:20px;color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:9px}
+    .chip{padding:8px 11px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:13px}
+    .note{
+      margin-top:24px;padding:18px 20px;border-left:3px solid var(--accent);
+      background:rgba(124,227,195,.055);color:var(--muted)
+    }
+    footer{padding:42px 0 70px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    .footer-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
+    @media(max-width:780px){
+      .nav-links{display:none}
+      header{padding-top:72px}
+      .stats,.grid{grid-template-columns:1fr}
+      .section-head{grid-template-columns:1fr;gap:14px}
+      .role{grid-template-columns:1fr;gap:8px}
     }
   </style>
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Mateus Lemos Figueiredo",
-      "email": "mailto:mateusllemosf@gmail.com",
-      "telephone": "+55 35 99762-5467",
-      "jobTitle": "Desenvolvedor Full Stack",
-      "description": "Desenvolvedor Full Stack com experiência em desenvolvimento web, automação de testes, sustentação de sistemas e resolução de problemas.",
-      "knowsAbout": [
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Python",
-        "Flask",
-        "SQL",
-        "Playwright",
-        "Git",
-        "Desenvolvimento Web",
-        "Automação de Testes"
-      ]
-    }
-  </script>
 </head>
-
 <body>
-  <a href="#conteudo-principal" class="skip-link">
-    Ir para o conteúdo principal
-  </a>
-
-  <nav class="navbar" id="navbar" aria-label="Navegação principal">
-    <div class="container navbar-content">
-      <a href="#inicio" class="brand" aria-label="Ir para o início">
-        <span class="brand-symbol">MF</span>
-        <span class="brand-text">Mateus Figueiredo</span>
-      </a>
-
-      <button
-        class="menu-button"
-        id="menuButton"
-        type="button"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="navLinks"
-      >
-        <span></span>
-      </button>
-
-      <div class="nav-links" id="navLinks">
-        <a href="#sobre">Sobre</a>
-        <a href="#experiencia">Experiência</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#tecnologias">Tecnologias</a>
-        <a href="#contato" class="nav-contact">Contato</a>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Mateus / Jiyu</a>
+      <div class="nav-links">
+        <a href="#work">Selected work</a>
+        <a href="#experience">Experience</a>
+        <a href="#stack">Technical focus</a>
+        <a href="mailto:mateusllemosf@gmail.com">Contact</a>
       </div>
     </div>
   </nav>
 
-  <header class="hero" id="inicio">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="availability">
-          <span class="availability-dot"></span>
-          Aberto a novas oportunidades em tecnologia
-        </div>
-
-        <p class="hero-eyebrow">
-          Desenvolvimento · Sustentação · Automação
-        </p>
-
+  <main id="top">
+    <header>
+      <div class="wrap">
+        <span class="eyebrow">Software Engineer & Founder · Applied AI · Developer Tools · Automation</span>
         <h1>
-          Mateus Lemos
-          <span class="gradient-text">Figueiredo.</span>
+          I build software with AI — and the engineering systems around it.
+          <span class="preferred">Mateus Lemos Figueiredo · preferred name: Jiyu Henko</span>
         </h1>
-
-        <p class="hero-description">
-          Desenvolvedor Full Stack e estudante de Ciência da Computação,
-          com experiência em <strong>desenvolvimento web</strong>,
-          <strong>automação de testes</strong>, investigação de falhas e
-          evolução de sistemas. Gosto de entender problemas complexos,
-          encontrar suas causas e transformá-los em soluções funcionais,
-          organizadas e sustentáveis.
+        <p class="hero-copy">
+          I have been building software since 2016 and doing paid technical work with customers since around 2018.
+          Today I focus on <strong>applied AI, coding-agent workflows, automation, developer productivity and customer-facing engineering</strong> —
+          from rapid prototypes to systems with explicit validation, security boundaries and operational gates.
         </p>
-
-        <div class="hero-actions">
-          <a
-            href="#projetos"
-            class="button button-primary"
-          >
-            Conhecer meus projetos
-
-            <svg
-              class="button-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M5 12h14M13 6l6 6-6 6"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-
-          <a
-            href="curriculo-mateus-figueiredo.pdf"
-            class="button button-secondary"
-            download
-          >
-            Baixar currículo
-
-            <svg
-              class="button-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
+        <div class="actions">
+          <a class="btn primary" href="#work">Explore selected work</a>
+          <a class="btn" href="https://github.com/JiyuHenko" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/jiyu-henko-539253332/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://www.custommind.com.br/" target="_blank" rel="noreferrer">Custom Mind</a>
         </div>
 
-        <div class="hero-highlights">
-          <div class="hero-highlight">
-            <strong>Full Stack</strong>
-            <span>Frontend, backend, APIs e bancos de dados.</span>
-          </div>
-
-          <div class="hero-highlight">
-            <strong>Qualidade</strong>
-            <span>Testes, debugging e investigação de regressões.</span>
-          </div>
-
-          <div class="hero-highlight">
-            <strong>Versatilidade</strong>
-            <span>Facilidade para navegar entre diferentes stacks.</span>
-          </div>
+        <div class="stats">
+          <div class="stat"><strong>10 years</strong><span>building software since 2016</span></div>
+          <div class="stat"><strong>~30 engagements</strong><span>customer-facing technical work across multiple industries</span></div>
+          <div class="stat"><strong>2024 → now</strong><span>hands-on experimentation with tool-using AI and agent-assisted development</span></div>
         </div>
       </div>
+    </header>
 
-      <div class="profile-wrapper">
-        <div class="profile-card">
-          <img
-            src="profile.jpg"
-            alt="Foto profissional de Mateus Lemos Figueiredo"
-          >
-
-          <div class="profile-status">
-            <strong>Ciência da Computação</strong>
-            <span>
-              IFSULDEMINAS · Desenvolvimento e qualidade de software
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main id="conteudo-principal">
-    <section class="section section-soft" id="sobre">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-label">Sobre mim</p>
-
-          <h2 class="section-title">
-            Tecnologia com foco no problema, não apenas na ferramenta.
-          </h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p>
-              Minha trajetória combina projetos independentes,
-              desenvolvimento de produtos digitais e experiência em
-              <strong>ambiente corporativo de tecnologia</strong>.
-              Já trabalhei em aplicações web, automações, plataformas
-              administrativas e fluxos de testes automatizados.
-            </p>
-
-            <p>
-              Tenho facilidade para transitar entre frontend, backend e
-              automação. Em vez de me limitar a uma única tecnologia,
-              procuro entender a arquitetura, o comportamento do sistema
-              e o impacto que cada mudança terá no usuário e na aplicação.
-            </p>
-
-            <p>
-              Meu perfil é especialmente voltado à
-              <strong>investigação e resolução de problemas</strong>:
-              reproduzir erros, analisar fluxos, localizar a causa de uma
-              falha, implementar correções e documentar o que foi realizado.
-            </p>
-
-            <p>
-              Também valorizo código organizado, versionamento,
-              comunicação clara, aprendizado contínuo e colaboração
-              com outras pessoas durante o desenvolvimento.
-            </p>
-          </div>
-
-          <div class="competencies reveal">
-            <article class="competency">
-              <div class="competency-number">01</div>
-
-              <div>
-                <h3>Investigação técnica</h3>
-                <p>
-                  Reprodução de erros, análise de comportamento e busca
-                  pela causa real do problema.
-                </p>
-              </div>
-            </article>
-
-            <article class="competency">
-              <div class="competency-number">02</div>
-
-              <div>
-                <h3>Desenvolvimento completo</h3>
-                <p>
-                  Participação em frontend, backend, banco de dados,
-                  APIs e integrações.
-                </p>
-              </div>
-            </article>
-
-            <article class="competency">
-              <div class="competency-number">03</div>
-
-              <div>
-                <h3>Automação e qualidade</h3>
-                <p>
-                  Criação de testes, fluxos reutilizáveis e validações
-                  para reduzir falhas.
-                </p>
-              </div>
-            </article>
-
-            <article class="competency">
-              <div class="competency-number">04</div>
-
-              <div>
-                <h3>Aprendizado rápido</h3>
-                <p>
-                  Facilidade para compreender projetos existentes e
-                  trabalhar com novas ferramentas.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experiencia">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-label">Experiência</p>
-
-          <h2 class="section-title">
-            Experiência prática em projetos e sistemas reais.
-          </h2>
-
-          <p class="section-description">
-            Atuação em qualidade de software, desenvolvimento web,
-            automação e manutenção de aplicações.
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Selected work</h2>
+          <p>
+            A few projects that best represent how I think: understand the system, define the boundaries,
+            automate what matters, and turn repeated failure modes into reusable engineering rules.
           </p>
         </div>
 
-        <div class="experience-list">
-          <article class="experience-item reveal">
-            <div class="experience-period">
-              Experiência atual
-            </div>
-
-            <div class="experience-content">
-              <h3>Qualidade e Automação de Software</h3>
-
-              <span class="experience-company">
-                Prodemge · Ambiente corporativo de tecnologia
-              </span>
-
-              <p>
-                Atuação em projetos de software com desenvolvimento e
-                manutenção de testes automatizados, investigação de falhas,
-                análise de fluxos e organização de componentes reutilizáveis.
-                Experiência com automação de aplicações web, Page Objects,
-                locators, dados de teste, versionamento e documentação
-                dos cenários implementados.
-              </p>
-
-              <div class="tag-list">
-                <span class="tag">Playwright</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Automação de Testes</span>
-                <span class="tag">Git</span>
-                <span class="tag">Debugging</span>
-                <span class="tag">Page Objects</span>
-              </div>
-            </div>
+        <div class="grid">
+          <article class="card">
+            <div class="meta">Case study · 2024</div>
+            <h3>Violet — tool-using AI assistant</h3>
+            <p>
+              An early AI assistant that translated model intent into controlled local commands and browser actions,
+              fed execution results back into the model, persisted conversational state and required user approval for sensitive local execution.
+            </p>
+            <a class="more" href="cases/violet.html">Read the case study →</a>
           </article>
 
-          <article class="experience-item reveal">
-            <div class="experience-period">
-              Projetos independentes
-            </div>
+          <article class="card">
+            <div class="meta">Engineering pattern · 2026</div>
+            <h3>Agentic SDLC Reference</h3>
+            <p>
+              A public distillation of the development harness I use around coding agents:
+              explicit context, bounded change plans, fast and full CI gates, visual QA, remote read-back,
+              failure-aware handoffs and evidence-based completion.
+            </p>
+            <a class="more" href="cases/agentic-sdlc.html">Explore the workflow →</a>
+          </article>
 
-            <div class="experience-content">
-              <h3>Desenvolvimento Full Stack</h3>
+          <article class="card">
+            <div class="meta">Private product · Custom Mind</div>
+            <h3>Project Fit</h3>
+            <p>
+              A fitness SaaS built with an offline-first mobile core, Supabase/Postgres, RLS, CI quality gates and a reusable AI-assisted development harness.
+              The product deliberately separates factual product authority from AI-generated interpretation.
+            </p>
+          </article>
 
-              <span class="experience-company">
-                Aplicações web, automações e produtos digitais
-              </span>
-
-              <p>
-                Planejamento e desenvolvimento de soluções completas,
-                passando pela análise do problema, definição de regras de
-                negócio, modelagem de dados, implementação de interfaces,
-                backend, integrações e publicação das aplicações.
-              </p>
-
-              <div class="tag-list">
-                <span class="tag">React</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">Python</span>
-                <span class="tag">Flask</span>
-                <span class="tag">SQL</span>
-                <span class="tag">APIs REST</span>
-              </div>
-            </div>
+          <article class="card">
+            <div class="meta">Experimental system</div>
+            <h3>Hytale Automator</h3>
+            <p>
+              A visual automation client combining screen perception, optical flow, optional OCR-derived telemetry,
+              normalized world state, human-demonstration datasets, explicit safety invariants and regression-driven iteration.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="projetos">
-      <div class="container">
-        <div class="section-header centered">
-          <p class="section-label">Projetos selecionados</p>
-
-          <h2 class="section-title">
-            Projetos construídos para resolver problemas reais.
-          </h2>
-
-          <p class="section-description">
-            Uma seleção de sistemas que demonstram desenvolvimento,
-            arquitetura, automação, regras de negócio e evolução contínua.
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Experience</h2>
+          <p>
+            My path is not a conventional enterprise ladder. It combines independent technical work,
+            building a software company, corporate quality engineering and years of direct problem-solving with customers.
           </p>
         </div>
 
-        <div class="projects-grid">
-          <article class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon">ZU</div>
-              <span class="project-type">Automação e IA</span>
+        <div class="timeline">
+          <div class="role">
+            <div class="when">2024 — Present</div>
+            <div>
+              <h3>Founder & Software Engineer · Custom Mind Software Solutions</h3>
+              <p>Discovery, architecture, prototyping and delivery across software, automation, AI-enabled workflows and digital products.</p>
+              <ul>
+                <li>Worked across roughly 30 customer engagements in automotive, real estate, healthcare, fitness, retail, food service and other domains.</li>
+                <li>Turn ambiguous business problems into scoped technical systems, demos, integrations and operational workflows.</li>
+                <li>Use coding agents as part of the engineering process while keeping explicit validation, security and deployment boundaries.</li>
+              </ul>
             </div>
+          </div>
 
-            <h3>Zuri — Assistente de Automação</h3>
-
-            <p class="project-summary">
-              Aplicação voltada à automação de tarefas e gerenciamento
-              de operações em redes sociais, combinando interface,
-              processamento de comandos e execução controlada de rotinas.
-            </p>
-
-            <div class="project-section">
-              <span class="project-section-title">Desafio</span>
+          <div class="role">
+            <div class="when">Mar 2026 — Present</div>
+            <div>
+              <h3>Software Quality & Automation Intern · PRODEMGE</h3>
               <p>
-                Coordenar diferentes processos automatizados sem gerar
-                conflitos, execuções duplicadas ou consumo desnecessário
-                de recursos da máquina.
+                Build and maintain Playwright-based automation for web systems, investigate regressions and intermittent failures,
+                and improve reusable testing components and data-driven coverage in a corporate environment.
               </p>
             </div>
+          </div>
 
-            <div class="tag-list">
-              <span class="tag">Python</span>
-              <span class="tag">Automação</span>
-              <span class="tag">Processos</span>
-              <span class="tag">Interface Desktop</span>
-              <span class="tag">IA</span>
-            </div>
-
-            <details class="project-details">
-              <summary>O que foi desenvolvido</summary>
-
-              <ul>
-                <li>Fluxo conversacional para interpretação de comandos.</li>
-                <li>Execução e acompanhamento de tarefas automatizadas.</li>
-                <li>Gerenciamento de processos iniciados pela aplicação.</li>
-                <li>Logs operacionais e tratamento de falhas.</li>
-                <li>Controle de uso de memória e processamento.</li>
-                <li>Interface para acompanhamento das operações.</li>
-              </ul>
-            </details>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon">BR</div>
-              <span class="project-type">Plataforma Full Stack</span>
-            </div>
-
-            <h3>Bolão Raiz 2026</h3>
-
-            <p class="project-summary">
-              Plataforma completa para gerenciamento de bolões de futebol,
-              com autenticação, pagamentos, palpites, rankings, regras de
-              pontuação e administração das diferentes fases da competição.
-            </p>
-
-            <div class="project-section">
-              <span class="project-section-title">Desafio</span>
+          <div class="role">
+            <div class="when">~2018 — 2024</div>
+            <div>
+              <h3>Independent Technical Work</h3>
               <p>
-                Gerenciar regras complexas de grupos e mata-mata, mantendo
-                consistência entre resultados, confrontos, pontuações,
-                pagamentos e dados exibidos aos participantes.
+                Paid technical support, software development and automation projects while continuing formal and self-directed study.
+                Earlier work ranged from Windows recovery and troubleshooting to progressively larger software systems and customer projects.
               </p>
             </div>
-
-            <div class="tag-list">
-              <span class="tag">TypeScript</span>
-              <span class="tag">React</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Neon</span>
-              <span class="tag">Vercel</span>
-            </div>
-
-            <details class="project-details">
-              <summary>O que foi desenvolvido</summary>
-
-              <ul>
-                <li>Autenticação e controle de sessão dos usuários.</li>
-                <li>Área administrativa para jogos e pagamentos.</li>
-                <li>Palpites para fase de grupos e mata-mata.</li>
-                <li>Cálculo de pontuação e critérios de desempate.</li>
-                <li>Ranking geral e rankings por modalidade.</li>
-                <li>Interface responsiva para desktop e dispositivos móveis.</li>
-              </ul>
-            </details>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon">QA</div>
-              <span class="project-type">Qualidade de Software</span>
-            </div>
-
-            <h3>Automação de Testes Institucionais</h3>
-
-            <p class="project-summary">
-              Estrutura de automação para validação de sistemas web
-              institucionais, utilizando componentes reutilizáveis,
-              separação de responsabilidades e organização dos cenários.
-            </p>
-
-            <div class="project-section">
-              <span class="project-section-title">Desafio</span>
-              <p>
-                Automatizar fluxos extensos e elementos dinâmicos,
-                reduzindo instabilidades e facilitando a manutenção
-                dos testes conforme o sistema evolui.
-              </p>
-            </div>
-
-            <div class="tag-list">
-              <span class="tag">Playwright</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Page Objects</span>
-              <span class="tag">JSON</span>
-              <span class="tag">Git</span>
-            </div>
-
-            <details class="project-details">
-              <summary>O que foi desenvolvido</summary>
-
-              <ul>
-                <li>Casos automatizados para diferentes módulos do sistema.</li>
-                <li>Componentes e métodos comuns reutilizáveis.</li>
-                <li>Flows para criação e preparação de dados.</li>
-                <li>Tratamento de elementos dinâmicos e assíncronos.</li>
-                <li>Validação de downloads, mensagens e alterações de dados.</li>
-                <li>Organização de locators e massas de teste.</li>
-              </ul>
-            </details>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon">MT</div>
-              <span class="project-type">Sistema Empresarial</span>
-            </div>
-
-            <h3>Plataforma de Gestão Multi-Tenant</h3>
-
-            <p class="project-summary">
-              Sistema web para gerenciamento de múltiplas empresas,
-              com separação lógica de dados, usuários, registros
-              financeiros e operações administrativas.
-            </p>
-
-            <div class="project-section">
-              <span class="project-section-title">Desafio</span>
-              <p>
-                Garantir que cada empresa pudesse utilizar o sistema de
-                forma independente, sem acesso aos dados ou operações
-                pertencentes a outras organizações.
-              </p>
-            </div>
-
-            <div class="tag-list">
-              <span class="tag">Python</span>
-              <span class="tag">Flask</span>
-              <span class="tag">SQLAlchemy</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Autenticação</span>
-            </div>
-
-            <details class="project-details">
-              <summary>O que foi desenvolvido</summary>
-
-              <ul>
-                <li>Modelagem de usuários, empresas e permissões.</li>
-                <li>Separação dos dados por organização.</li>
-                <li>Cadastros e operações financeiras.</li>
-                <li>Autenticação e controle de acesso.</li>
-                <li>Regras de negócio e validação dos registros.</li>
-                <li>Painel administrativo responsivo.</li>
-              </ul>
-            </details>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon">VI</div>
-              <span class="project-type">Assistente Conversacional</span>
-            </div>
-
-            <h3>Violet — Atendimento Inteligente</h3>
-
-            <p class="project-summary">
-              Assistente virtual voltada a atendimento, qualificação de
-              contatos e condução de fluxos conversacionais, com integração
-              entre mensagens, regras e automações.
-            </p>
-
-            <div class="project-section">
-              <span class="project-section-title">Desafio</span>
-              <p>
-                Tornar a conversa menos engessada, mantendo contexto,
-                interpretando intenções e encaminhando cada usuário
-                para o fluxo adequado.
-              </p>
-            </div>
-
-            <div class="tag-list">
-              <span class="tag">Python</span>
-              <span class="tag">IA</span>
-              <span class="tag">APIs</span>
-              <span class="tag">Automação</span>
-              <span class="tag">NLP</span>
-            </div>
-
-            <details class="project-details">
-              <summary>O que foi desenvolvido</summary>
-
-              <ul>
-                <li>Fluxos de atendimento e qualificação.</li>
-                <li>Interpretação de comandos e intenções.</li>
-                <li>Integração entre conversação e ações automatizadas.</li>
-                <li>Tratamento de respostas inesperadas.</li>
-                <li>Organização das regras do assistente.</li>
-              </ul>
-            </details>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-top">
-              <div class="project-icon">CM</div>
-              <span class="project-type">Web e Produto Digital</span>
-            </div>
-
-            <h3>CustomMind — Plataforma Institucional</h3>
-
-            <p class="project-summary">
-              Evolução de uma presença digital voltada à apresentação
-              de serviços de tecnologia, com melhorias de experiência,
-              identidade visual, responsividade e estrutura de conteúdo.
-            </p>
-
-            <div class="project-section">
-              <span class="project-section-title">Desafio</span>
-              <p>
-                Transformar um site institucional convencional em uma
-                experiência mais moderna, clara e preparada para
-                conversão e descoberta nos mecanismos de busca.
-              </p>
-            </div>
-
-            <div class="tag-list">
-              <span class="tag">React</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">UI/UX</span>
-              <span class="tag">Responsividade</span>
-              <span class="tag">SEO</span>
-            </div>
-
-            <details class="project-details">
-              <summary>O que foi desenvolvido</summary>
-
-              <ul>
-                <li>Reestruturação visual e organização das páginas.</li>
-                <li>Componentes reutilizáveis e responsivos.</li>
-                <li>Melhorias de hierarquia e experiência de navegação.</li>
-                <li>Estruturação de metadados e conteúdo para SEO.</li>
-                <li>Otimização da apresentação dos serviços.</li>
-              </ul>
-            </details>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="tecnologias">
-      <div class="container">
-        <div class="section-header centered">
-          <p class="section-label">Tecnologias</p>
-
-          <h2 class="section-title">
-            Ferramentas que utilizo para construir e manter soluções.
-          </h2>
-
-          <p class="section-description">
-            Minha prioridade é compreender o projeto e aplicar a
-            tecnologia adequada para cada necessidade.
+    <section id="stack">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Technical focus</h2>
+          <p>
+            I started with C and later moved through Java, Python, Ruby on Rails and modern JavaScript/TypeScript stacks.
+            I care more about understanding system behavior and constraints than about being attached to one framework.
           </p>
         </div>
-
-        <div class="technology-groups">
-          <article class="technology-group reveal">
-            <h3>Frontend</h3>
-
-            <div class="technology-list">
-              <span>React</span>
-              <span>JavaScript</span>
-              <span>TypeScript</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>Vite</span>
-              <span>Design Responsivo</span>
-            </div>
-          </article>
-
-          <article class="technology-group reveal">
-            <h3>Backend e APIs</h3>
-
-            <div class="technology-list">
-              <span>Python</span>
-              <span>Flask</span>
-              <span>APIs REST</span>
-              <span>Autenticação</span>
-              <span>Regras de Negócio</span>
-              <span>Integrações</span>
-            </div>
-          </article>
-
-          <article class="technology-group reveal">
-            <h3>Dados</h3>
-
-            <div class="technology-list">
-              <span>SQL</span>
-              <span>PostgreSQL</span>
-              <span>SQLite</span>
-              <span>SQLAlchemy</span>
-              <span>Modelagem de Dados</span>
-              <span>Neon</span>
-            </div>
-          </article>
-
-          <article class="technology-group reveal">
-            <h3>Qualidade e automação</h3>
-
-            <div class="technology-list">
-              <span>Playwright</span>
-              <span>Testes E2E</span>
-              <span>Page Objects</span>
-              <span>Debugging</span>
-              <span>Regressão</span>
-              <span>Automação</span>
-            </div>
-          </article>
-
-          <article class="technology-group reveal">
-            <h3>Versionamento e entrega</h3>
-
-            <div class="technology-list">
-              <span>Git</span>
-              <span>GitHub</span>
-              <span>Pull Requests</span>
-              <span>Code Review</span>
-              <span>Vercel</span>
-              <span>Deploy</span>
-            </div>
-          </article>
-
-          <article class="technology-group reveal">
-            <h3>Conhecimentos complementares</h3>
-
-            <div class="technology-list">
-              <span>IA</span>
-              <span>Automação de Processos</span>
-              <span>Flutter</span>
-              <span>Cloud</span>
-              <span>Documentação Técnica</span>
-              <span>Inglês Técnico</span>
-            </div>
-          </article>
+        <div class="chips">
+          <span class="chip">C</span>
+          <span class="chip">Python</span>
+          <span class="chip">JavaScript / TypeScript</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">React / React Native</span>
+          <span class="chip">SQL / PostgreSQL / SQLite</span>
+          <span class="chip">Supabase</span>
+          <span class="chip">Playwright</span>
+          <span class="chip">Git / GitHub Actions</span>
+          <span class="chip">Docker / AWS</span>
+          <span class="chip">APIs & integrations</span>
+          <span class="chip">AI coding agents</span>
+          <span class="chip">Tool-using AI</span>
+          <span class="chip">CI / quality gates</span>
+          <span class="chip">Customer discovery</span>
         </div>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-header centered">
-          <p class="section-label">Forma de trabalhar</p>
-
-          <h2 class="section-title">
-            Da identificação do problema até uma solução verificável.
-          </h2>
-        </div>
-
-        <div class="work-style-grid">
-          <article class="work-style-card reveal">
-            <span>01</span>
-            <h3>Compreender</h3>
-            <p>
-              Entendo o contexto, o comportamento esperado e o impacto
-              do problema antes de alterar o código.
-            </p>
-          </article>
-
-          <article class="work-style-card reveal">
-            <span>02</span>
-            <h3>Investigar</h3>
-            <p>
-              Reproduzo a falha, verifico logs, dados, fluxos e dependências
-              para localizar sua origem.
-            </p>
-          </article>
-
-          <article class="work-style-card reveal">
-            <span>03</span>
-            <h3>Implementar</h3>
-            <p>
-              Desenvolvo a correção ou melhoria buscando legibilidade,
-              reaproveitamento e baixo risco de regressão.
-            </p>
-          </article>
-
-          <article class="work-style-card reveal">
-            <span>04</span>
-            <h3>Validar</h3>
-            <p>
-              Testo o comportamento, verifico impactos relacionados e
-              documento as decisões importantes.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contato">
-      <div class="container">
-        <div class="contact-card reveal">
-          <div class="contact-content">
-            <p class="section-label">Contato</p>
-
-            <h2>
-              Vamos conversar sobre tecnologia e novos desafios?
-            </h2>
-
-            <p>
-              Estou disponível para oportunidades em desenvolvimento,
-              sustentação, qualidade de software e automação. Entre em
-              contato pelo e-mail ou WhatsApp.
-            </p>
-          </div>
-
-          <div class="contact-actions">
-            <a
-              href="mailto:mateusllemosf@gmail.com"
-              class="button button-primary"
-            >
-              Enviar e-mail
-            </a>
-
-            <a
-              href="https://wa.me/5535997625467"
-              class="button button-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Abrir WhatsApp
-            </a>
-
-            <button
-              class="button button-secondary"
-              id="copyEmailButton"
-              type="button"
-            >
-              Copiar e-mail
-            </button>
-          </div>
+        <div class="note">
+          Languages: Portuguese — native · English — fluent · Spanish — fluent.
+          Based in Minas Gerais, Brazil; open to relocation to São Paulo.
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-content">
+    <div class="wrap footer-grid">
+      <div>Mateus Lemos Figueiredo · Jiyu Henko</div>
       <div>
-        <span class="footer-name">Mateus Lemos Figueiredo</span>
-        <br>
-        Desenvolvedor Full Stack
-      </div>
-
-      <div class="footer-links">
-        <a href="mailto:mateusllemosf@gmail.com">
-          mateusllemosf@gmail.com
-        </a>
-
-        <a
-          href="https://wa.me/5535997625467"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          (35) 99762-5467
-        </a>
-      </div>
-
-      <div>
-        © <span id="currentYear"></span>
+        <a href="mailto:mateusllemosf@gmail.com">mateusllemosf@gmail.com</a> ·
+        <a href="https://github.com/JiyuHenko" target="_blank" rel="noreferrer">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/jiyu-henko-539253332/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    const navbar = document.getElementById("navbar");
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
-    const copyEmailButton = document.getElementById("copyEmailButton");
-    const currentYear = document.getElementById("currentYear");
-    const navigationLinks = navLinks.querySelectorAll("a");
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const email = "mateusllemosf@gmail.com";
-
-    function updateNavbar() {
-      navbar.classList.toggle("scrolled", window.scrollY > 20);
-    }
-
-    function closeMenu() {
-      menuButton.classList.remove("active");
-      navLinks.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-      menuButton.setAttribute("aria-label", "Abrir menu");
-    }
-
-    function toggleMenu() {
-      const isOpen = navLinks.classList.toggle("open");
-
-      menuButton.classList.toggle("active", isOpen);
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-      menuButton.setAttribute(
-        "aria-label",
-        isOpen ? "Fechar menu" : "Abrir menu"
-      );
-    }
-
-    async function copyEmail() {
-      const originalText = copyEmailButton.textContent.trim();
-
-      try {
-        await navigator.clipboard.writeText(email);
-        copyEmailButton.textContent = "E-mail copiado";
-
-        setTimeout(() => {
-          copyEmailButton.textContent = originalText;
-        }, 2200);
-      } catch (error) {
-        window.location.href = `mailto:${email}`;
-      }
-    }
-
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: 0.12
-      }
-    );
-
-    revealElements.forEach((element) => {
-      revealObserver.observe(element);
-    });
-
-    navigationLinks.forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
-
-    menuButton.addEventListener("click", toggleMenu);
-    copyEmailButton.addEventListener("click", copyEmail);
-    window.addEventListener("scroll", updateNavbar);
-
-    document.addEventListener("click", (event) => {
-      const clickedInsideNavbar = navbar.contains(event.target);
-
-      if (!clickedInsideNavbar) {
-        closeMenu();
-      }
-    });
-
-    currentYear.textContent = new Date().getFullYear();
-
-    updateNavbar();
-  </script>
 </body>
 </html>

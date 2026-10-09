@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Violet — a 2024 tool-using AI assistant case study by Mateus Lemos Figueiredo (Jiyu Henko).">
+  <title>Violet — Tool-Using AI Assistant | Jiyu Henko</title>
+  <style>
+    :root{--bg:#071018;--card:#0e1c27;--text:#eef5f7;--muted:#a9bac2;--line:#203642;--accent:#7ce3c3;--accent2:#8db7ff;--max:920px}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(800px 500px at 15% -10%,rgba(124,227,195,.12),transparent 65%),var(--bg);line-height:1.7}
+    a{color:var(--accent2)}.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    nav{border-bottom:1px solid var(--line);background:rgba(7,16,24,.92)}nav .wrap{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    nav a{text-decoration:none;font-weight:700}.back{color:var(--muted);font-size:14px}
+    header{padding:82px 0 42px}.eyebrow{color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+    h1{margin:12px 0 18px;font-size:clamp(2.8rem,7vw,5.8rem);line-height:.98;letter-spacing:-.06em}
+    .lead{max-width:780px;color:var(--muted);font-size:1.18rem}.lead strong{color:var(--text)}
+    .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:30px 0}
+    .fact{padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025)}.fact strong{display:block}.fact span{color:var(--muted);font-size:13px}
+    section{padding:34px 0;border-top:1px solid var(--line)}h2{margin:0 0 14px;font-size:1.8rem;letter-spacing:-.03em}p{color:var(--muted)}
+    ul{color:var(--muted)}li+li{margin-top:8px}
+    pre{overflow:auto;padding:20px;border:1px solid var(--line);border-radius:16px;background:#09141d;color:#d8e8ec}
+    .callout{padding:18px 20px;border-left:3px solid var(--accent);background:rgba(124,227,195,.055);color:var(--muted)}
+    footer{padding:42px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    @media(max-width:700px){.facts{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav><div class="wrap"><a href="../index.html">Mateus / Jiyu</a><a class="back" href="../index.html#work">← Back to selected work</a></div></nav>
+<header><div class="wrap">
+  <div class="eyebrow">Historical case study · August 2024</div>
+  <h1>Violet</h1>
+  <p class="lead">
+    A personal AI assistant prototype that connected model output to <strong>controlled local actions</strong>:
+    command execution, browser automation, persistent conversational state and iterative tool-result feedback.
+  </p>
+  <div class="facts">
+    <div class="fact"><strong>August 2024</strong><span>historical Git commits document the prototype period</span></div>
+    <div class="fact"><strong>Human approval</strong><span>required before local command execution</span></div>
+    <div class="fact"><strong>Tool feedback loop</strong><span>execution output was fed back to the model</span></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+<section>
+  <h2>Why I built it</h2>
+  <p>
+    I was interested in AI as an interface to software, not only as a chat surface. The core question was:
+    can a model interpret intent, choose an action, execute it through constrained local capabilities, inspect the result,
+    and continue the task without giving it unrestricted control of the machine?
+  </p>
+  <p>
+    Violet was an early prototype, built before MCP became a standard. I do not claim it invented MCP or modern tool calling;
+    the interesting part is that I independently converged on several of the same systems problems: tool boundaries,
+    execution feedback, persistent state and approval around side effects.
+  </p>
+</section>
+
+<section>
+  <h2>What it could do</h2>
+  <ul>
+    <li><strong>Persistent memory:</strong> conversation history stored in SQLite and reloaded across sessions.</li>
+    <li><strong>Local command execution:</strong> model output could request Windows terminal commands through a controlled protocol.</li>
+    <li><strong>Approval gate:</strong> the user was asked before an allowed command was actually executed.</li>
+    <li><strong>Result interpretation:</strong> command output was sent back to the model so it could continue reasoning about the task.</li>
+    <li><strong>Sequential actions:</strong> the execution loop could continue when the model produced another valid action after seeing a tool result.</li>
+    <li><strong>Browser control:</strong> Selenium opened pages, searched fields and interacted with DOM elements from model-issued instructions.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Architecture</h2>
+  <pre>User request
+   ↓
+Language model
+   ↓
+Action protocol
+   ├── normal response
+   ├── local command request
+   └── browser action
+          ↓
+Validation / human approval
+          ↓
+Execution layer
+   ├── subprocess
+   └── Selenium
+          ↓
+Observed result
+          ↓
+Persist history + feed result back to model
+          ↓
+Continue or return to user</pre>
+  <p>
+    The implementation used explicit textual delimiters such as command and site-action markers. That was pragmatic for the time,
+    but it is also one of the clearest limitations of the prototype: modern structured tool calling is safer and less brittle than parsing free-form model text.
+  </p>
+</section>
+
+<section>
+  <h2>Safety and operational boundaries</h2>
+  <p>
+    Violet was never intended to have unrestricted machine authority. Command execution passed through validation,
+    and the user was prompted before execution. The browser layer operated through normal Selenium controls rather than hidden system access.
+  </p>
+  <div class="callout">
+    The prototype was intentionally experimental. Its value today is not that I would ship the same architecture unchanged;
+    it is that the project forced me to think early about trust boundaries, side effects, tool feedback and the difference between
+    “the model said it happened” and “the system observed that it happened.”
+  </div>
+</section>
+
+<section>
+  <h2>What I would change today</h2>
+  <ul>
+    <li>Replace delimiter parsing with typed tool schemas and explicit arguments.</li>
+    <li>Use capability-scoped tools instead of generic shell access wherever possible.</li>
+    <li>Add durable execution traces, correlation IDs and normalized failure states.</li>
+    <li>Separate model planning, tool authorization and execution into independent boundaries.</li>
+    <li>Use stronger browser state validation instead of assuming a successful Selenium call proves the intended outcome.</li>
+    <li>Add regression tests and policy checks around every side-effecting capability.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Why it still matters to my work</h2>
+  <p>
+    Violet changed the way I think about AI systems. I stopped treating the model as the product and started treating it as one component
+    inside a larger engineered workflow. That same idea now appears in how I use coding agents: explicit context, bounded authority,
+    observable actions, validation, checkpoints and evidence before completion.
+  </p>
+</section>
+</main>
+<footer><div class="wrap">Mateus Lemos Figueiredo · Jiyu Henko · <a href="mailto:mateusllemosf@gmail.com">mateusllemosf@gmail.com</a></div></footer>
+</body>
+</html>

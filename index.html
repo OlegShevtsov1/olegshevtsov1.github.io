@@ -5,174 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mateus Lemos Figueiredo (Jiyu Henko) — software engineer and founder focused on applied AI, developer tools, automation and AI-assisted software delivery.">
   <meta name="author" content="Mateus Lemos Figueiredo">
-  <meta name="theme-color" content="#0b0d10">
+  <meta name="theme-color" content="#f5f3ee">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mateus Lemos Figueiredo | Applied AI & Software Engineering">
-  <meta property="og:description" content="Applied AI, developer tools, automation, customer-facing engineering and AI-assisted software delivery.">
-  <title>Mateus Lemos Figueiredo | Applied AI & Software Engineering</title>
+  <meta property="og:description" content="Applied AI, developer tools, automation and customer-facing software engineering.">
+  <title>Mateus Lemos Figueiredo | Software Engineer</title>
   <link rel="stylesheet" href="assets/css/portfolio-v2.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" aria-label="Primary navigation">
-    <div class="nav-shell">
-      <a class="brand-pill" href="#top" aria-label="Mateus / Jiyu home">
-        <span class="brand-mark">JH</span>
-        <span><strong>Mateus / Jiyu</strong><small>Applied AI + software</small></span>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="nameplate" href="#top">
+        <strong>Mateus Lemos Figueiredo</strong>
+        <span>Jiyu Henko</span>
       </a>
-      <nav class="nav-pill" aria-label="Sections">
+      <nav aria-label="Primary">
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
-        <a href="#principles">Principles</a>
-        <a href="#stack">Stack</a>
-      </nav>
-      <a class="nav-cta" href="mailto:mateusllemosf@gmail.com">Contact <i>↗</i></a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      <nav class="mobile-nav" aria-label="Mobile sections">
-        <a href="#work">Selected work</a><a href="#experience">Experience</a><a href="#principles">Principles</a><a href="#stack">Technical focus</a><a href="mailto:mateusllemosf@gmail.com">Contact</a>
+        <a href="#about">About</a>
+        <a href="mailto:mateusllemosf@gmail.com">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero-stage" id="top" data-hero-stage>
-      <div class="hero-pin">
-        <div class="hero-frame" data-hero-frame>
-          <div class="shell hero-grid">
-            <div class="hero-copy">
-              <div class="kicker on-dark">Software engineer & founder · Applied AI · developer tools</div>
-              <h1 class="display">BUILD.<br><span class="ghost">VERIFY.</span><br>SHIP.</h1>
-              <p class="hero-lead">
-                I build software with AI — and the <strong>engineering systems around it</strong>. My work sits between coding agents, automation, product architecture, customer problems and the evidence required to trust what ships.
-              </p>
-              <div class="hero-actions">
-                <a class="btn btn-light" href="#work">Explore selected work</a>
-                <a class="btn btn-outline" href="https://github.com/JiyuHenko" target="_blank" rel="noreferrer">GitHub ↗</a>
-                <a class="btn btn-outline" href="https://www.linkedin.com/in/jiyu-henko-539253332/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-              </div>
-              <div class="hero-meta">
-                <span>Building software since 2016</span><span>~30 client engagements</span><span>Brazil · open to São Paulo</span>
-              </div>
-            </div>
+  <main id="top">
+    <section class="hero wrap">
+      <p class="eyebrow">Software engineer & founder</p>
+      <h1>I build useful software,<br>often with AI in the loop.</h1>
+      <p class="hero-copy">
+        I work across applied AI, developer tools, automation and customer-facing software.
+        I care about understanding the problem, building quickly, and verifying what actually works.
+      </p>
+      <div class="hero-meta">
+        <span>Building software since 2016</span>
+        <span>~30 client engagements</span>
+        <span>Brazil · open to São Paulo</span>
+      </div>
+      <div class="hero-links">
+        <a href="#work">Selected work ↓</a>
+        <a href="https://github.com/JiyuHenko" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/jiyu-henko-539253332/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      </div>
+    </section>
 
-            <div class="hero-visual" aria-label="Animated AI-assisted software workflow">
-              <div class="motion-console">
-                <div class="console-head"><span>agentic delivery loop</span><span class="console-dots"><i></i><i></i><i></i></span></div>
-                <div class="console-body">
-                  <div class="motion-word" aria-hidden="true"><div class="motion-word-track" data-motion-word><span>PLAN</span><span>BUILD</span><span>VERIFY</span><span>SHIP</span></div></div>
-                  <div class="workflow">
-                    <div class="flow-row active" data-flow-row><b>01</b><strong>Bound the problem</strong><small>context</small></div>
-                    <div class="flow-row" data-flow-row><b>02</b><strong>Agent-assisted implementation</strong><small>tools</small></div>
-                    <div class="flow-row" data-flow-row><b>03</b><strong>Collect real evidence</strong><small>tests + read-back</small></div>
-                    <div class="flow-row" data-flow-row><b>04</b><strong>Release from authority</strong><small>gates</small></div>
-                  </div>
-                  <div class="console-foot"><span>status <strong>observable</strong></span><span>authority <strong>bounded</strong></span><span>completion <strong>evidence-based</strong></span></div>
-                </div>
-              </div>
-            </div>
+    <section class="section wrap" id="work">
+      <div class="section-label">Selected work</div>
+      <div class="project-list">
+        <a class="project-row" href="cases/violet.html">
+          <div>
+            <span class="project-year">2024</span>
+            <h2>Violet</h2>
+            <p>Tool-using AI assistant with local actions, browser automation, persistent context, execution feedback and human approval.</p>
           </div>
-          <div class="hero-scroll-hint">scroll to frame the system</div>
-        </div>
-      </div>
-    </section>
+          <span class="project-arrow">↗</span>
+        </a>
 
-    <div class="signal-strip" aria-hidden="true">
-      <div class="signal-track"><span>PLAN <i></i> BUILD <i></i> TEST <i></i> READ BACK <i></i> VERIFY <i></i> SHIP <i></i></span><span>PLAN <i></i> BUILD <i></i> TEST <i></i> READ BACK <i></i> VERIFY <i></i> SHIP <i></i></span></div>
-    </div>
-
-    <section class="statement">
-      <div class="shell statement-grid">
-        <div class="statement-note" data-reveal><strong>My operating thesis</strong>Models are powerful. Reliable systems come from what surrounds them: context, authority, tools, feedback and verification.</div>
-        <h2 class="display" data-reveal>I don't just ask AI to write code. <em>I design the workflow that makes the code trustworthy.</em></h2>
-      </div>
-    </section>
-
-    <section class="cases-section" id="work">
-      <div class="cases-shell" data-cases-shell>
-        <div class="cases-pin">
-          <div class="cases-copy">
-            <div class="kicker on-dark">Selected systems</div>
-            <h2 class="display">Built to learn how software behaves.</h2>
-            <p>These projects are different on purpose: an early tool-using assistant, an agentic SDLC, a production-oriented product and a perception/automation experiment.</p>
-            <div class="case-counter"><strong data-case-counter>01</strong> / 04</div>
+        <a class="project-row" href="cases/agentic-sdlc.html">
+          <div>
+            <span class="project-year">2026</span>
+            <h2>Agentic SDLC</h2>
+            <p>A practical workflow for coding agents built around explicit context, bounded authority, CI gates, read-back and evidence-based completion.</p>
           </div>
+          <span class="project-arrow">↗</span>
+        </a>
 
-          <div class="case-stage">
-            <article class="case-card case-a" data-case-card>
-              <div class="case-card-inner">
-                <small>Historical case · Aug 2024</small>
-                <div><h3 class="display">Violet</h3><p>Tool-using AI assistant with persistent context, controlled local command execution, browser automation, human approval and execution feedback.</p><a href="cases/violet.html">Read the case study →</a></div>
-              </div>
-              <div class="case-code"><span>model → action protocol</span><span>validate → approve</span><span>execute → observe</span><span>result → model</span></div><span class="case-foot">AI as software interface</span>
-            </article>
-            <article class="case-card case-b" data-case-card>
-              <div class="case-card-inner">
-                <small>Engineering pattern · 2026</small>
-                <div><h3 class="display">Agentic SDLC</h3><p>Explicit context, bounded change plans, fast/full CI, visual QA, remote read-back, resumable checkpoints and evidence-based completion around coding agents.</p><a href="cases/agentic-sdlc.html">Explore the workflow →</a></div>
-              </div>
-              <div class="case-code"><span>read source of truth</span><span>bound change</span><span>verify semantics</span><span>checkpoint remote</span></div><span class="case-foot">developer productivity</span>
-            </article>
-            <article class="case-card case-c" data-case-card>
-              <div class="case-card-inner">
-                <small>Private product · Custom Mind</small>
-                <div><h3 class="display">Project Fit</h3><p>Offline-first fitness SaaS using TypeScript, React Native, SQLite, Supabase/Postgres, RLS and a reusable agent-assisted engineering harness.</p></div>
-              </div>
-              <div class="case-code"><span>local write + outbox</span><span>RLS authority</span><span>AI bounded context</span><span>release gates</span></div><span class="case-foot">product + infrastructure</span>
-            </article>
-            <article class="case-card case-d" data-case-card>
-              <div class="case-card-inner">
-                <small>Experimental system</small>
-                <div><h3 class="display">Hytale Automator</h3><p>Visual automation combining screen perception, optical flow, optional OCR telemetry, normalized world state, demonstration datasets and explicit safety invariants.</p></div>
-              </div>
-              <div class="case-code"><span>pixels → perception</span><span>telemetry → world state</span><span>state → action intent</span><span>action → observed delta</span></div><span class="case-foot">ambiguous systems</span>
-            </article>
+        <div class="project-row static">
+          <div>
+            <span class="project-year">Custom Mind</span>
+            <h2>Project Fit</h2>
+            <p>Private fitness SaaS using React Native, SQLite, Supabase/Postgres, RLS and an AI-assisted development harness.</p>
           </div>
+          <span class="project-note">private</span>
+        </div>
+
+        <div class="project-row static">
+          <div>
+            <span class="project-year">Experiment</span>
+            <h2>Hytale Automator</h2>
+            <p>Visual automation combining perception, telemetry, normalized world state, demonstration datasets and explicit safety constraints.</p>
+          </div>
+          <span class="project-note">private</span>
         </div>
       </div>
     </section>
 
-    <section class="experience" id="experience">
-      <div class="shell">
-        <div class="section-intro"><h2 class="display" data-reveal>Engineering with customers, not around them.</h2><p data-reveal>My path combines independent technical work, building a software company, corporate quality engineering and years of direct problem-solving with people who need the software to actually work.</p></div>
-        <div class="timeline">
-          <article class="role" data-reveal><div class="role-time">2024 — present</div><div><h3>Founder & Software Engineer · Custom Mind</h3><p>Discovery, architecture, prototyping and delivery across custom software, automation, applied AI and digital products.</p><ul><li>Worked across roughly 30 customer engagements in automotive, real estate, healthcare, fitness, retail, food service and other domains.</li><li>Turn ambiguous business problems into scoped systems, demos, integrations and operational workflows.</li><li>Use coding agents as part of engineering while preserving validation, security and deployment boundaries.</li></ul></div></article>
-          <article class="role" data-reveal><div class="role-time">Mar 2026 — present</div><div><h3>Software Quality & Automation Intern · PRODEMGE</h3><p>Build and maintain Playwright automation for web systems, investigate regressions and intermittent failures, and improve reusable testing components and data-driven coverage in a corporate environment.</p></div></article>
-          <article class="role" data-reveal><div class="role-time">~2018 — 2024</div><div><h3>Independent Technical Work</h3><p>Paid technical support, software development and automation projects while continuing formal and self-directed study — from Windows recovery and troubleshooting to progressively larger software systems and client work.</p></div></article>
-        </div>
+    <section class="section wrap" id="experience">
+      <div class="section-label">Experience</div>
+      <div class="timeline">
+        <article class="timeline-row">
+          <div class="time">2024 — present</div>
+          <div>
+            <h2>Founder & Software Engineer · Custom Mind</h2>
+            <p>Custom software, automation, applied AI and technical consulting. Roughly 30 client engagements across automotive, real estate, healthcare, fitness, retail, food service and other areas.</p>
+          </div>
+        </article>
+
+        <article class="timeline-row">
+          <div class="time">Mar 2026 — present</div>
+          <div>
+            <h2>Software Quality & Automation Intern · PRODEMGE</h2>
+            <p>Playwright-based automation, regression investigation, reusable test components and data-driven coverage in a corporate software environment.</p>
+          </div>
+        </article>
+
+        <article class="timeline-row">
+          <div class="time">~2018 — 2024</div>
+          <div>
+            <h2>Independent technical work</h2>
+            <p>Paid technical support, software development and automation while continuing formal and self-directed study.</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="principles" id="principles">
-      <div class="shell principles-grid">
-        <div class="principles-sticky"><div class="kicker">How I work</div><h2 class="display">Speed matters. Proof matters more.</h2><p>I like fast iteration, but I don't treat activity as evidence of correctness. The workflow should tell us what changed, what was proven and what remains uncertain.</p></div>
-        <div class="principle-list">
-          <article class="principle" data-reveal><span>01</span><div><h3>Understand before editing.</h3><p>Read the system, repository state and real constraints before proposing the change.</p></div></article>
-          <article class="principle" data-reveal><span>02</span><div><h3>Bound authority and side effects.</h3><p>Agents and integrations should have explicit capabilities, not vague permission to “do whatever is needed.”</p></div></article>
-          <article class="principle" data-reveal><span>03</span><div><h3>Validate semantics, not just status.</h3><p>A green test or successful API call only matters when it proves the actual contract.</p></div></article>
-          <article class="principle" data-reveal><span>04</span><div><h3>Turn recurring failures into tooling.</h3><p>If a mistake repeats, make it a rule, check, template or architectural constraint.</p></div></article>
-          <article class="principle" data-reveal><span>05</span><div><h3>Customer success beats unnecessary scope.</h3><p>The right technical answer can be to simplify, change direction or advise a customer not to buy something they don't need.</p></div></article>
-        </div>
+    <section class="section wrap about-grid" id="about">
+      <div class="section-label">About</div>
+      <div class="about-copy">
+        <p class="lead">
+          I like learning how systems work, getting good at the process, and then making the process better.
+        </p>
+        <p>
+          I started with C, later learned Java, Python, Ruby on Rails and modern JavaScript/TypeScript stacks. Over time I became more interested in the systems around software: automation, quality, customer workflows and, more recently, coding agents and applied AI.
+        </p>
+        <p>
+          My approach is simple: understand what matters, avoid unnecessary complexity, build the smallest useful version, and verify the result against the real system.
+        </p>
       </div>
     </section>
 
-    <section class="stack-section" id="stack">
-      <div class="shell">
-        <div class="stack-head"><h2 class="display">Technical range</h2><p>I started with C, learned object-oriented design through Java, then moved across Python, Ruby on Rails and modern JavaScript/TypeScript stacks. I optimize for understanding systems, not collecting framework labels.</p></div>
-        <div class="chips" data-reveal><span class="chip">C</span><span class="chip">Python</span><span class="chip">JavaScript / TypeScript</span><span class="chip">Node.js</span><span class="chip">React / React Native</span><span class="chip">SQL / PostgreSQL / SQLite</span><span class="chip">Supabase</span><span class="chip">Playwright</span><span class="chip">Git / GitHub Actions</span><span class="chip">Docker / AWS</span><span class="chip">APIs & integrations</span><span class="chip">AI coding agents</span><span class="chip">Tool-using AI</span><span class="chip">CI / quality gates</span><span class="chip">Customer discovery</span></div>
-        <div class="language-note"><span><strong>Languages</strong> Portuguese — native · English — fluent · Spanish — fluent</span><span><strong>Location</strong> Minas Gerais, Brazil · open to relocation to São Paulo</span></div>
+    <section class="section wrap">
+      <div class="section-label">Technical range</div>
+      <div class="skill-lines">
+        <p><strong>Languages</strong> C · Python · JavaScript · TypeScript · Java</p>
+        <p><strong>Web & product</strong> Node.js · React · React Native · APIs · SQL · PostgreSQL · SQLite · Supabase</p>
+        <p><strong>Engineering</strong> Playwright · Git · GitHub Actions · Docker · AWS · CI · automation · coding agents</p>
+        <p><strong>Human languages</strong> Portuguese — native · English — fluent · Spanish — fluent</p>
       </div>
     </section>
 
-    <section class="final-cta">
-      <div class="final-card">
-        <h2 class="display">Build faster. Keep the system honest.</h2>
-        <div class="final-bottom"><p>I care about the point where AI stops being a demo and becomes part of how engineers actually plan, build, verify and ship software.</p><a class="btn" href="mailto:mateusllemosf@gmail.com">Start a conversation →</a></div>
+    <section class="contact wrap">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>mateusllemosf@gmail.com</h2>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:mateusllemosf@gmail.com">Email ↗</a>
+        <a href="https://github.com/JiyuHenko" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/jiyu-henko-539253332/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="https://www.custommind.com.br/" target="_blank" rel="noreferrer">Custom Mind ↗</a>
       </div>
     </section>
   </main>
 
-  <footer><div class="shell footer-grid"><span>Mateus Lemos Figueiredo · preferred name: Jiyu Henko</span><span><a href="mailto:mateusllemosf@gmail.com">Email</a> · <a href="https://github.com/JiyuHenko" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/jiyu-henko-539253332/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://www.custommind.com.br/" target="_blank" rel="noreferrer">Custom Mind</a></span></div></footer>
-  <script src="assets/js/portfolio-v2.js" defer></script>
+  <footer class="wrap footer">
+    <span>Mateus Lemos Figueiredo · preferred name: Jiyu Henko</span>
+    <span class="status"><i></i> Open to relocation to São Paulo</span>
+  </footer>
 </body>
 </html>

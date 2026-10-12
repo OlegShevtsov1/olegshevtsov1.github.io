@@ -1,19 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" class="case-page">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Violet — a 2024 tool-using AI assistant case study by Mateus Lemos Figueiredo (Jiyu Henko).">
   <title>Violet — Tool-Using AI Assistant | Jiyu Henko</title>
   <link rel="stylesheet" href="../assets/css/portfolio-v2.css">
 </head>
 <body>
-  <header class="site-header"><div class="nav-shell"><a class="brand-pill" href="../index.html"><span class="brand-mark">JH</span><span><strong>Mateus / Jiyu</strong><small>Case study</small></span></a><nav class="nav-pill"><a href="../index.html#work">Selected work</a><a href="agentic-sdlc.html">Agentic SDLC</a></nav><a class="nav-cta" href="../index.html">Portfolio <i>←</i></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button><nav class="mobile-nav"><a href="../index.html">Portfolio</a><a href="agentic-sdlc.html">Agentic SDLC</a></nav></div></header>
+  <header class="case-header">
+    <div class="wrap">
+      <a href="../index.html">← Mateus / Jiyu</a>
+      <a href="agentic-sdlc.html">Agentic SDLC →</a>
+    </div>
+  </header>
+
   <main>
-    <section class="case-hero"><div class="shell"><div class="kicker">Historical case · August 2024</div><h1 class="display">Violet</h1><p class="lede">A personal AI assistant prototype that connected model output to <strong>controlled local actions</strong>: command execution, browser automation, persistent conversational state and iterative tool-result feedback.</p><div class="case-facts"><div class="case-fact"><strong>August 2024</strong><span>historical Git commits document the prototype period</span></div><div class="case-fact"><strong>Human approval</strong><span>required before local command execution</span></div><div class="case-fact"><strong>Tool feedback loop</strong><span>execution output was fed back to the model</span></div></div></div></section>
+    <section class="case-hero wrap">
+      <p class="eyebrow">Historical case · August 2024</p>
+      <h1>Violet</h1>
+      <p class="lede">
+        A personal AI assistant prototype that connected model output to <strong>controlled local actions</strong>:
+        command execution, browser automation, persistent conversational state and iterative tool-result feedback.
+      </p>
+      <div class="case-facts">
+        <div class="case-fact"><strong>August 2024</strong><span>Historical Git commits document the prototype period.</span></div>
+        <div class="case-fact"><strong>Human approval</strong><span>Required before local command execution.</span></div>
+        <div class="case-fact"><strong>Tool feedback loop</strong><span>Execution output was fed back to the model.</span></div>
+      </div>
+    </section>
+
     <div class="case-body">
-      <section class="case-block"><h2>Why I built it</h2><p>I was interested in AI as an interface to software, not only as a chat surface. The core question was whether a model could interpret intent, choose an action, execute it through constrained local capabilities, inspect the result and continue without receiving unrestricted control of the machine.</p><p>Violet was built before MCP became a standard. I do not claim it invented MCP or modern tool calling; the interesting part is that I independently converged on several of the same systems problems: tool boundaries, execution feedback, persistent state and approval around side effects.</p></section>
-      <section class="case-block"><h2>What it could do</h2><ul><li><strong>Persistent memory:</strong> conversation history stored in SQLite and reloaded across sessions.</li><li><strong>Local command execution:</strong> model output could request Windows terminal commands through a controlled protocol.</li><li><strong>Approval gate:</strong> the user was asked before an allowed command was actually executed.</li><li><strong>Result interpretation:</strong> command output was sent back to the model so it could continue reasoning about the task.</li><li><strong>Sequential actions:</strong> the execution loop could continue when another valid action followed a tool result.</li><li><strong>Browser control:</strong> Selenium opened pages, searched fields and interacted with DOM elements from model-issued instructions.</li></ul></section>
-      <section class="case-block"><h2>Architecture</h2><pre>User request
+      <section class="case-block">
+        <h2>Why I built it</h2>
+        <p>I was interested in AI as an interface to software, not only as a chat surface. The core question was whether a model could interpret intent, choose an action, execute it through constrained local capabilities, inspect the result and continue without receiving unrestricted control of the machine.</p>
+        <p>Violet was built before MCP became a standard. I do not claim it invented MCP or modern tool calling; the interesting part is that I independently converged on several of the same systems problems: tool boundaries, execution feedback, persistent state and approval around side effects.</p>
+      </section>
+
+      <section class="case-block">
+        <h2>What it could do</h2>
+        <ul>
+          <li><strong>Persistent memory:</strong> conversation history stored in SQLite and reloaded across sessions.</li>
+          <li><strong>Local command execution:</strong> model output could request Windows terminal commands through a controlled protocol.</li>
+          <li><strong>Approval gate:</strong> the user was asked before an allowed command was actually executed.</li>
+          <li><strong>Result interpretation:</strong> command output was sent back to the model so it could continue reasoning about the task.</li>
+          <li><strong>Sequential actions:</strong> the execution loop could continue when another valid action followed a tool result.</li>
+          <li><strong>Browser control:</strong> Selenium opened pages, searched fields and interacted with DOM elements from model-issued instructions.</li>
+        </ul>
+      </section>
+
+      <section class="case-block">
+        <h2>Architecture</h2>
+        <pre>User request
    ↓
 Language model
    ↓
@@ -32,13 +70,35 @@ Observed result
           ↓
 Persist history + feed result back to model
           ↓
-Continue or return to user</pre><p>The implementation used textual action delimiters. It worked as an experiment, but it is one of the clearest limitations of the prototype: modern structured tool calling is safer and less brittle than parsing free-form model text.</p></section>
-      <section class="case-block"><h2>Safety and operational boundaries</h2><p>Violet was never intended to have unrestricted machine authority. Command execution passed through validation and the user was prompted before execution. The browser layer operated through ordinary Selenium controls rather than hidden system access.</p><div class="callout">The value of the prototype today is not that I would ship the same architecture unchanged; it is that the project forced me to think early about trust boundaries, side effects, tool feedback and the difference between “the model said it happened” and “the system observed that it happened.”</div></section>
-      <section class="case-block"><h2>What I would change today</h2><ul><li>Replace delimiter parsing with typed tool schemas and explicit arguments.</li><li>Use capability-scoped tools instead of generic shell access wherever possible.</li><li>Add durable execution traces, correlation IDs and normalized failure states.</li><li>Separate model planning, tool authorization and execution into independent boundaries.</li><li>Use stronger browser state validation instead of assuming a successful Selenium call proves the intended outcome.</li><li>Add regression tests and policy checks around every side-effecting capability.</li></ul></section>
-      <section class="case-block"><h2>Why it still matters</h2><p>Violet changed the way I think about AI systems. I stopped treating the model as the product and started treating it as one component inside a larger engineered workflow. That same idea now appears in how I use coding agents: explicit context, bounded authority, observable actions, validation, checkpoints and evidence before completion.</p></section>
+Continue or return to user</pre>
+        <p>The implementation used textual action delimiters. It worked as an experiment, but it is one of the clearest limitations of the prototype: modern structured tool calling is safer and less brittle than parsing free-form model text.</p>
+      </section>
+
+      <section class="case-block">
+        <h2>Safety and operational boundaries</h2>
+        <p>Violet was never intended to have unrestricted machine authority. Command execution passed through validation and the user was prompted before execution. The browser layer operated through ordinary Selenium controls rather than hidden system access.</p>
+        <div class="callout">The value of the prototype today is not that I would ship the same architecture unchanged; it is that the project forced me to think early about trust boundaries, side effects, tool feedback and the difference between “the model said it happened” and “the system observed that it happened.”</div>
+      </section>
+
+      <section class="case-block">
+        <h2>What I would change today</h2>
+        <ul>
+          <li>Replace delimiter parsing with typed tool schemas and explicit arguments.</li>
+          <li>Use capability-scoped tools instead of generic shell access wherever possible.</li>
+          <li>Add durable execution traces, correlation IDs and normalized failure states.</li>
+          <li>Separate model planning, tool authorization and execution into independent boundaries.</li>
+          <li>Use stronger browser state validation instead of assuming a successful Selenium call proves the intended outcome.</li>
+          <li>Add regression tests and policy checks around every side-effecting capability.</li>
+        </ul>
+      </section>
+
+      <section class="case-block">
+        <h2>Why it still matters</h2>
+        <p>Violet changed the way I think about AI systems. I stopped treating the model as the product and started treating it as one component inside a larger engineered workflow. That same idea now appears in how I use coding agents: explicit context, bounded authority, observable actions, validation, checkpoints and evidence before completion.</p>
+      </section>
+
       <div class="case-footer"><a href="../index.html#work">← Back to selected work</a></div>
     </div>
   </main>
-  <script src="../assets/js/portfolio-v2.js" defer></script>
 </body>
 </html>

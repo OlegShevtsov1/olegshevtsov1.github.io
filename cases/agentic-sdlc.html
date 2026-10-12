@@ -1,19 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" class="case-page">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Agentic SDLC Reference — engineering patterns for coding agents by Mateus Lemos Figueiredo (Jiyu Henko).">
   <title>Agentic SDLC Reference | Jiyu Henko</title>
   <link rel="stylesheet" href="../assets/css/portfolio-v2.css">
 </head>
 <body>
-  <header class="site-header"><div class="nav-shell"><a class="brand-pill" href="../index.html"><span class="brand-mark">JH</span><span><strong>Mateus / Jiyu</strong><small>Engineering pattern</small></span></a><nav class="nav-pill"><a href="../index.html#work">Selected work</a><a href="violet.html">Violet</a></nav><a class="nav-cta" href="../index.html">Portfolio <i>←</i></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button><nav class="mobile-nav"><a href="../index.html">Portfolio</a><a href="violet.html">Violet</a></nav></div></header>
+  <header class="case-header">
+    <div class="wrap">
+      <a href="../index.html">← Mateus / Jiyu</a>
+      <a href="violet.html">Violet →</a>
+    </div>
+  </header>
+
   <main>
-    <section class="case-hero"><div class="shell"><div class="kicker">Engineering pattern · coding-agent workflows</div><h1 class="display">Agentic SDLC</h1><p class="lede">A public distillation of the workflow patterns I use around coding agents such as Codex: <strong>explicit context, bounded authority, evidence-based validation and resumable execution.</strong></p><div class="case-facts"><div class="case-fact"><strong>Context first</strong><span>source-of-truth files before edits</span></div><div class="case-fact"><strong>Evidence first</strong><span>semantic validation over green status</span></div><div class="case-fact"><strong>Resumable</strong><span>remote checkpoints instead of sandbox memory</span></div></div></div></section>
+    <section class="case-hero wrap">
+      <p class="eyebrow">Engineering pattern · coding-agent workflows</p>
+      <h1>Agentic SDLC</h1>
+      <p class="lede">
+        A practical distillation of how I work with coding agents such as Codex:
+        <strong>explicit context, bounded authority, evidence-based validation and resumable execution.</strong>
+      </p>
+      <div class="case-facts">
+        <div class="case-fact"><strong>Context first</strong><span>Source-of-truth files before edits.</span></div>
+        <div class="case-fact"><strong>Evidence first</strong><span>Semantic validation over green status.</span></div>
+        <div class="case-fact"><strong>Resumable</strong><span>Remote checkpoints instead of sandbox memory.</span></div>
+      </div>
+    </section>
+
     <div class="case-body">
-      <section class="case-block"><h2>The problem</h2><p>Coding agents are useful because they can operate across many parts of a repository. The same flexibility creates risk: hidden assumptions, accidental refactors, stale context, false “done” states, expensive CI loops and side effects that are hard to audit.</p><p>My approach is to engineer the workflow around the agent instead of relying on a perfect prompt. The harness used on internal projects turns recurring engineering lessons into explicit rules, checks and source-of-truth files.</p></section>
-      <section class="case-block"><h2>Core principles</h2><ul><li><strong>Understand before editing:</strong> inspect repository state, relevant files and existing user changes first.</li><li><strong>Classify the change:</strong> distinguish spike, bounded change and architectural work.</li><li><strong>Bound scope explicitly:</strong> document affected files, dependencies, risks and executable verification criteria.</li><li><strong>Write success is not proof:</strong> after important remote writes, read back the source of truth.</li><li><strong>Green is not semantic correctness:</strong> a passing build, artifact or screenshot is evidence only when it proves the contract that matters.</li><li><strong>Checkpoint long work:</strong> publish logical remote checkpoints so future runs resume from authority, not memory.</li><li><strong>Fast loop, heavy final gate:</strong> use cheap checks during iteration and reserve expensive evidence for the release candidate.</li><li><strong>Turn failures into system knowledge:</strong> recurring mistakes become rules, automated checks, templates or architecture.</li></ul></section>
-      <section class="case-block"><h2>Reference lifecycle</h2><pre>1. Read repository + source-of-truth context
+      <section class="case-block">
+        <h2>The problem</h2>
+        <p>Coding agents are useful because they can operate across many parts of a repository. The same flexibility creates risk: hidden assumptions, accidental refactors, stale context, false “done” states, expensive CI loops and side effects that are hard to audit.</p>
+        <p>My approach is to engineer the workflow around the agent instead of relying on a perfect prompt. The harness used on internal projects turns recurring engineering lessons into explicit rules, checks and source-of-truth files.</p>
+      </section>
+
+      <section class="case-block">
+        <h2>Core principles</h2>
+        <ul>
+          <li><strong>Understand before editing:</strong> inspect repository state, relevant files and existing user changes first.</li>
+          <li><strong>Classify the change:</strong> distinguish spike, bounded change and architectural work.</li>
+          <li><strong>Bound scope explicitly:</strong> document affected files, dependencies, risks and executable verification criteria.</li>
+          <li><strong>Write success is not proof:</strong> after important remote writes, read back the source of truth.</li>
+          <li><strong>Green is not semantic correctness:</strong> a passing build, artifact or screenshot is evidence only when it proves the contract that matters.</li>
+          <li><strong>Checkpoint long work:</strong> publish logical remote checkpoints so future runs resume from authority, not memory.</li>
+          <li><strong>Fast loop, heavy final gate:</strong> use cheap checks during iteration and reserve expensive evidence for the release candidate.</li>
+          <li><strong>Turn failures into system knowledge:</strong> recurring mistakes become rules, automated checks, templates or architecture.</li>
+        </ul>
+      </section>
+
+      <section class="case-block">
+        <h2>Reference lifecycle</h2>
+        <pre>1. Read repository + source-of-truth context
 2. Preserve existing user changes
 3. Classify: spike / bounded / architectural
 4. Write a small change plan
@@ -29,14 +69,39 @@
     - visual QA / runtime evidence
 11. Review diff + artifacts
 12. Record what remains unverified
-13. Convert recurring failures into harness improvements</pre></section>
-      <section class="case-block"><h2>Why evidence is first-class</h2><p>Agent workflows fail when status becomes a substitute for truth. A screenshot can show the wrong route. A file can exist but contain stale data. A deploy API can return success while the remote state differs from what was intended. A test suite can be green while it verifies the wrong contract.</p><div class="callout">Define what would actually prove the claim, then collect that evidence as close as possible to the real system.</div></section>
-      <section class="case-block"><h2>Fast vs. full CI</h2><p>On Project Fit, normal draft iteration uses a fast pull-request gate for lockfile integrity, linting, formatting, TypeScript, unit/integration checks and harness validation. Heavy exports and visual evidence run at an explicit final gate instead of every checkpoint.</p><p>This protects both quality and cost: the release gate is not weakened, but heavyweight evidence is not repeatedly paid for before a real release candidate exists.</p></section>
-      <section class="case-block"><h2>Safety boundaries inside products</h2><p>The same thinking applies to AI-enabled product features. On a current product, AI-generated interpretation is intentionally separated from canonical product authority. Factual progress, access control, billing, identity and other critical state remain server-authoritative; AI receives bounded context and cannot silently become the source of truth.</p></section>
-      <section class="case-block"><h2>Where I want to push this further</h2><ul><li>Typed contracts between planning, implementation, review and deployment agents.</li><li>Stronger policy checks around side-effecting tools and secret-bearing operations.</li><li>Automated provenance linking claims to tests, screenshots, logs or remote read-back.</li><li>Reusable adoption patterns engineering teams can understand, customize and teach internally.</li><li>Metrics that separate “more code produced” from actual throughput, reliability and review quality.</li></ul></section>
+13. Convert recurring failures into harness improvements</pre>
+      </section>
+
+      <section class="case-block">
+        <h2>Why evidence is first-class</h2>
+        <p>Agent workflows fail when status becomes a substitute for truth. A screenshot can show the wrong route. A file can exist but contain stale data. A deploy API can return success while the remote state differs from what was intended. A test suite can be green while it verifies the wrong contract.</p>
+        <div class="callout">Define what would actually prove the claim, then collect that evidence as close as possible to the real system.</div>
+      </section>
+
+      <section class="case-block">
+        <h2>Fast vs. full CI</h2>
+        <p>On Project Fit, normal draft iteration uses a fast pull-request gate for lockfile integrity, linting, formatting, TypeScript, unit/integration checks and harness validation. Heavy exports and visual evidence run at an explicit final gate instead of every checkpoint.</p>
+        <p>This protects both quality and cost: the release gate is not weakened, but heavyweight evidence is not repeatedly paid for before a real release candidate exists.</p>
+      </section>
+
+      <section class="case-block">
+        <h2>Safety boundaries inside products</h2>
+        <p>The same thinking applies to AI-enabled product features. On a current product, AI-generated interpretation is intentionally separated from canonical product authority. Factual progress, access control, billing, identity and other critical state remain server-authoritative; AI receives bounded context and cannot silently become the source of truth.</p>
+      </section>
+
+      <section class="case-block">
+        <h2>Where I want to push this further</h2>
+        <ul>
+          <li>Typed contracts between planning, implementation, review and deployment agents.</li>
+          <li>Stronger policy checks around side-effecting tools and secret-bearing operations.</li>
+          <li>Automated provenance linking claims to tests, screenshots, logs or remote read-back.</li>
+          <li>Reusable adoption patterns engineering teams can understand, customize and teach internally.</li>
+          <li>Metrics that separate “more code produced” from actual throughput, reliability and review quality.</li>
+        </ul>
+      </section>
+
       <div class="case-footer"><a href="../index.html#work">← Back to selected work</a></div>
     </div>
   </main>
-  <script src="../assets/js/portfolio-v2.js" defer></script>
 </body>
 </html>

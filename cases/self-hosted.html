@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Self-hosted infrastructure — Oleh Shevtsov's homelab: one server, isolated VMs per project, unattended coding-agent workspaces and CI runners.">
+  <meta name="author" content="Oleh Shevtsov">
+  <link rel="canonical" href="https://olegshevtsov1.github.io/cases/self-hosted.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/warm.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+  <title>Self-hosted infrastructure — Oleh Shevtsov</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="case-top"><div class="container"><a href="../index.html">← Oleh Shevtsov</a><nav class="case-nav" aria-label="Case studies"><a href="agentic-sdlc.html">Agentic SDLC</a><a href="pilot.html">Pilot</a></nav></div></header>
+  <main id="main">
+    <section class="case-hero"><div class="container">
+      <p class="label">CASE STUDY · THE HOMELAB</p>
+      <h1>Self-hosted <em>infrastructure</em></h1>
+      <p class="case-lede">One physical server that hosts my whole working environment: isolated virtual machines per project and client, workspaces where coding agents run unattended, and the runners that build and deploy my projects.</p>
+      <div class="case-facts">
+        <div class="case-fact"><strong>1 host</strong><span>16 cores, 62 GB RAM, Ubuntu 22.04 LTS.</span></div>
+        <div class="case-fact"><strong>35 VMs</strong><span>One per project or client, started only when needed.</span></div>
+        <div class="case-fact"><strong>SSH + RDP</strong><span>Key-only SSH on per-VM ports; a full desktop over xrdp when a GUI is needed.</span></div>
+        <div class="case-fact"><strong>Agents 24/7</strong><span>Archon workspaces and a supervisor run the factory unattended.</span></div>
+      </div>
+    </div></section>
+
+    <div class="case-body"><div class="container">
+      <section>
+        <h2>Why <em>self-host</em></h2>
+        <p>Coding agents need room: a real shell, Docker, databases, a browser, and hours of runtime. Giving them my laptop is risky and slow; renting all of it in the cloud gets expensive. A single server split into isolated VMs gives every project — and every agent — its own sandbox, with nothing shared that I didn't decide to share.</p>
+      </section>
+
+      <section>
+        <h2>The <em>layout</em></h2>
+        <ul>
+          <li><strong>Hypervisor host:</strong> VirtualBox on Ubuntu; each VM gets its own SSH port, its own keys and its own resources.</li>
+          <li><strong>Template VM:</strong> a clean base image that new project environments are cloned from, so a new project starts the same way every time.</li>
+          <li><strong>Harness VM:</strong> where Claude Code, Archon and the <code>sdlc-autopilot</code> supervisor live, with Docker for the services a task needs.</li>
+          <li><strong>Project VMs:</strong> one per product or client, so code, credentials and data never mix between them.</li>
+          <li><strong>Desktop access:</strong> xrdp with GNOME for the moments an agent's work has to be checked in a real browser.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>How agents <em>run here</em></h2>
+        <ol class="case-flow">
+          <li>A task brief lands in the supervisor's queue for a repository.</li>
+          <li>The Archon <code>factory</code> starts it in its own workspace on the harness VM, with throwaway Postgres and Redis containers.</li>
+          <li>The supervisor answers only routine gates from its policy file, escalates everything else, and writes one ledger line per decision.</li>
+          <li>CI jobs can target a self-hosted runner, so builds and deploys stay close to the code.</li>
+          <li>Test leftovers older than 24 hours are cleaned up daily.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Rules I <em>keep</em></h2>
+        <ul>
+          <li>Key-only SSH, separate GitHub identities per account through host aliases.</li>
+          <li>Secrets live in the environment of the VM that needs them — never in repositories, never in the bundle.</li>
+          <li>Anything an agent does unattended must leave a trace: ledger lines, PRs, run reports.</li>
+        </ul>
+        <p class="case-note">My laptop is a terminal. The work — and the agents — live on the server.</p>
+      </section>
+    </div></div>
+  </main>
+  <footer class="case-foot"><div class="container"><span>© 2026 Oleh Shevtsov</span><a href="agentic-sdlc.html">Next: Agentic SDLC →</a></div></footer>
+</body>
+</html>

@@ -40,14 +40,14 @@
   });
   $$('[data-open-demo]').forEach(link => link.addEventListener('click', () => activateDemo(link.dataset.openDemo)));
 
-  // Violet: deterministic illustrative flow. No commands or APIs are executed.
-  let violetStep = 0;
-  let violetDecision = null;
-  const next = $('#violet-next');
-  const approval = $('#violet-approval');
-  const log = $('#violet-log');
-  const result = $('#violet-result');
-  const stage = $('#violet-stage');
+  // Agent tool approval: deterministic illustrative flow. No commands or APIs are executed.
+  let approvalStep = 0;
+  let approvalDecision = null;
+  const next = $('#approval-next');
+  const approval = $('#approval-approval');
+  const log = $('#approval-log');
+  const result = $('#approval-result');
+  const stage = $('#approval-stage');
   const addEvent = (idx, message) => {
     const item = document.createElement('li');
     const n = document.createElement('span');
@@ -55,9 +55,9 @@
     item.append(n, document.createTextNode(message));
     log.append(item);
   };
-  const resetViolet = () => {
-    violetStep = 0;
-    violetDecision = null;
+  const resetApproval = () => {
+    approvalStep = 0;
+    approvalDecision = null;
     log.replaceChildren();
     addEvent(0, 'Click start to see how this flow works.');
     stage.textContent = '00 / 03';
@@ -68,11 +68,11 @@
     next.textContent = 'Start walkthrough →';
   };
   next?.addEventListener('click', () => {
-    if (violetStep === 0) {
+    if (approvalStep === 0) {
       log.replaceChildren();
-      addEvent(1, 'The model proposes reading a project directory.');
-      addEvent(2, 'The system checks capability scope and requests human approval.');
-      violetStep = 1;
+      addEvent(1, 'The agent wrote a migration and proposes running bin/rails db:migrate.');
+      addEvent(2, 'The harness checks its permission rules: rspec → allow, db:migrate → ask, kamal deploy → deny. It asks a human.');
+      approvalStep = 1;
       stage.textContent = '02 / 03';
       approval.hidden = false;
       next.hidden = true;
@@ -80,34 +80,34 @@
     }
   });
   const finish = allowed => {
-    if (violetStep !== 1 || violetDecision !== null) return;
-    violetDecision = allowed;
-    violetStep = 2;
+    if (approvalStep !== 1 || approvalDecision !== null) return;
+    approvalDecision = allowed;
+    approvalStep = 2;
     approval.hidden = true;
     next.hidden = true;
     stage.textContent = '03 / 03';
     if (allowed) {
-      addEvent(3, 'Approved. Mock tool result: 3 project folders, 2 README files.');
-      addEvent(4, 'The assistant forms a summary from the returned data.');
-      result.textContent = '✓ Example complete: the tool output is simulated and then verified against the request. No real folder was accessed.';
+      addEvent(3, 'Approved. Mock result: 1 migration applied, schema.rb updated.');
+      addEvent(4, 'The agent runs the related specs and reports 12 examples, 0 failures — as evidence, not as a claim.');
+      result.textContent = '✓ Example complete: the command output is simulated and then checked against the request. No real database was touched.';
       result.className = 'trace-result success';
     } else {
       addEvent(3, 'Permission denied. Execution stops safely.');
-      result.textContent = '✕ Example stopped: the assistant can explain the denial, but cannot access the folder.';
+      result.textContent = '✕ Example stopped: the agent can explain what it needed and why, but the database stays untouched.';
       result.className = 'trace-result denied';
     }
   };
-  $('#violet-approve')?.addEventListener('click', () => finish(true));
-  $('#violet-deny')?.addEventListener('click', () => finish(false));
-  $('#violet-reset')?.addEventListener('click', resetViolet);
+  $('#approval-approve')?.addEventListener('click', () => finish(true));
+  $('#approval-deny')?.addEventListener('click', () => finish(false));
+  $('#approval-reset')?.addEventListener('click', resetApproval);
 
-  // Test Architecture Validator: fictional, standalone JavaScript checks only.
-  const goodSample = `test('saves settings', async ({ page }) => {\n  await page.goto('/settings');\n  await page.getByRole('button', { name: 'Save' }).click();\n  await expect(page.getByText('Saved')).toBeVisible();\n});`;
-  const badSample = `test.only('saves the form', async ({ page }) => {\n  await page.goto('/settings');\n  await page.waitForTimeout(5000);\n  await page.locator('#save').click();\n});`;
-  const editor = $('#guard-editor');
+  // RSpec checks: fictional, standalone JavaScript checks only.
+  const goodSample = `RSpec.describe "GET /api/v1/projects" do\n  let!(:projects) { create_list(:project, 3, :with_tasks) }\n\n  it "returns projects with task counts" do\n    get "/api/v1/projects", headers: auth_headers\n    expect(response).to have_http_status(:ok)\n    expect(json["data"].size).to eq(3)\n  end\nend`;
+  const badSample = `RSpec.describe "GET /api/v1/projects" do\n  fit "returns projects" do\n    3.times { Project.create!(name: "P") }\n    get "/api/v1/projects"\n    sleep 2\n    puts response.body\n  end\nend`;
+  const editor = $('#spec-editor');
   $$('[data-preset]').forEach(button => button.addEventListener('click', () => {
     editor.value = button.dataset.preset === 'clean' ? goodSample : badSample;
-    $('#guard-run').click();
+    $('#spec-run').click();
   }));
   const makeResult = (passed, message) => {
     const li = document.createElement('li');
@@ -115,22 +115,24 @@
     li.textContent = message;
     return li;
   };
-  $('#guard-run')?.addEventListener('click', () => {
+  $('#spec-run')?.addEventListener('click', () => {
     const code = editor.value;
     const checks = [
-      [!/(?:test|describe)\.only\s*\(/.test(code), 'No focused test left behind (test.only / describe.only)'],
-      [!/(?:test|describe)\.skip\s*\(/.test(code), 'No accidentally skipped tests (test.skip / describe.skip)'],
-      [/\bexpect\s*\(/.test(code), 'An assertion verifies the intended result'],
-      [!/\bwaitForTimeout\s*\(/.test(code), 'No fixed sleeps (waitForTimeout)'],
+      [!/\b(?:fit|fdescribe|fcontext)\b|focus:\s*true/.test(code), 'No focused spec left behind (fit / fdescribe / focus: true)'],
+      [!/\b(?:xit|xdescribe|xcontext)\b|^\s*skip\b/m.test(code), 'No accidentally skipped specs (xit / xdescribe / skip)'],
+      [/\bexpect\s*[({]/.test(code), 'An expectation verifies the intended result'],
+      [!/\bsleep\b/.test(code), 'No fixed sleeps (sleep)'],
+      [!/^\s*(?:puts|pp|p)\b|binding\.(?:pry|irb)|\bdebugger\b/m.test(code), 'No debug output left in (puts / pp / binding.pry)'],
+      [!/\b[A-Z]\w*\.create!?\s*\(/.test(code), 'Test data comes from factories, not Model.create!'],
     ];
     const failures = checks.filter(([pass]) => !pass).length;
-    $('#guard-summary').textContent = failures ? `${failures} item${failures !== 1 ? 's' : ''} worth reviewing.` : 'Looking good in this sample.';
-    $('#guard-results').replaceChildren(...checks.map(([pass, message]) => makeResult(pass, message)));
+    $('#spec-summary').textContent = failures ? `${failures} item${failures !== 1 ? 's' : ''} worth reviewing.` : 'Looking good in this sample.';
+    $('#spec-results').replaceChildren(...checks.map(([pass, message]) => makeResult(pass, message)));
   });
 
   const gateCases = {
-    fast: { label: 'FAST GATE / ITERATION', checks: ['Read the actual repository context','Lint and type-check the change','Run nearby tests','Review the diff before proceeding'], quote: '“A green check is a clue. Understanding what it proves is the job.”' },
-    release: { label: 'RELEASE GATE / EVIDENCE', checks: ['Run the full test suite and build','Check security and configuration boundaries','Inspect real runtime behavior and UI','Read back important remote writes','Record what remains unverified'], quote: '“The work is complete when the evidence matches the claim.”' }
+    fast: { label: 'FAST GATE / ITERATION', checks: ['Read the spec, ADRs and current repo state','RuboCop, ESLint and type-check the change','Run the specs next to the change','Review the diff for accidental scope'], quote: '“A green check is a clue. Understanding what it proves is the job.”' },
+    release: { label: 'RELEASE GATE / EVIDENCE', checks: ['Full RSpec + frontend suite on one Docker image per commit','Check secrets, config and security boundaries','Tag-only release → Kamal deploy with health checks','Smoke-test production and watch error tracking','Keep one-click rollback ready; record what stays unverified'], quote: '“The work is complete when the evidence matches the claim.”' }
   };
   $$('.sdlc-choice').forEach(button => button.addEventListener('click', () => {
     $$('.sdlc-choice').forEach(b => {const active = b === button; b.classList.toggle('active', active); b.setAttribute('aria-pressed', String(active));});
@@ -146,7 +148,7 @@
     const button = event.currentTarget;
     const original = button.innerHTML;
     try {
-      await navigator.clipboard.writeText('mateusllemosf@gmail.com');
+      await navigator.clipboard.writeText('olegshevtsov1@gmail.com');
       button.textContent = 'Copied! ✓';
     } catch {
       button.textContent = 'Use the email link on the left';

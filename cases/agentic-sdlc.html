@@ -1,107 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Agentic SDLC Reference — engineering patterns for coding agents by Mateus Lemos Figueiredo (Jiyu Henko).">
-  <title>Agentic SDLC Reference | Jiyu Henko</title>
-  <link rel="stylesheet" href="../assets/css/portfolio-v2.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agentic SDLC — Oleh Shevtsov's AI-driven delivery toolkit: Claude Code plugins, an Archon factory workflow and spec-driven delivery from PRD to a deployed PR.">
+  <meta name="author" content="Oleh Shevtsov">
+  <link rel="canonical" href="https://olegshevtsov1.github.io/cases/agentic-sdlc.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/warm.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+  <title>Agentic SDLC — Oleh Shevtsov</title>
 </head>
 <body>
-  <header class="case-header">
-    <div class="wrap">
-      <a href="../index.html">← Mateus / Jiyu</a>
-      <a href="violet.html">Violet →</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="case-hero wrap">
-      <p class="eyebrow">Engineering pattern · coding-agent workflows</p>
-      <h1>Agentic SDLC</h1>
-      <p class="lede">
-        A practical distillation of how I work with coding agents such as Codex:
-        <strong>explicit context, bounded authority, evidence-based validation and resumable execution.</strong>
-      </p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="case-top"><div class="container"><a href="../index.html">← Oleh Shevtsov</a><nav class="case-nav" aria-label="Case studies"><a href="pilot.html">Pilot</a><a href="self-hosted.html">Self-hosted</a></nav></div></header>
+  <main id="main">
+    <section class="case-hero"><div class="container">
+      <p class="label">CASE STUDY · HOW I SHIP</p>
+      <h1>Agentic <em>SDLC</em></h1>
+      <p class="case-lede">An AI-driven delivery process for small product teams, packaged as code: Claude Code plugins take an idea through specification, architecture and tasks; an Archon workflow — “the factory” — turns each task into a tested, reviewed, merged and deployed pull request.</p>
+      <div class="case-links"><a href="https://github.com/OlegShevtsov1/1_mvp_sdlc" target="_blank" rel="noopener noreferrer">1_mvp_sdlc on GitHub ↗</a><a href="https://github.com/OlegShevtsov1/agentic-sdlc-reference" target="_blank" rel="noopener noreferrer">Reference workflow ↗</a><a href="pilot.html">Built with it: Pilot →</a></div>
       <div class="case-facts">
-        <div class="case-fact"><strong>Context first</strong><span>Source-of-truth files before edits.</span></div>
-        <div class="case-fact"><strong>Evidence first</strong><span>Semantic validation over green status.</span></div>
-        <div class="case-fact"><strong>Resumable</strong><span>Remote checkpoints instead of sandbox memory.</span></div>
+        <div class="case-fact"><strong>Spec first</strong><span>Idea brief → PRD → C4 architecture + ADRs → data model → task briefs.</span></div>
+        <div class="case-fact"><strong>Tests first</strong><span>TDD commit order is checked in CI, not just requested.</span></div>
+        <div class="case-fact"><strong>Gated</strong><span>A phase gate refuses to skip steps; hooks protect main, secrets and tags.</span></div>
+        <div class="case-fact"><strong>Honest reports</strong><span>A rolled-back deploy is never reported as a success.</span></div>
       </div>
-    </section>
+    </div></section>
 
-    <div class="case-body">
-      <section class="case-block">
-        <h2>The problem</h2>
-        <p>Coding agents are useful because they can operate across many parts of a repository. The same flexibility creates risk: hidden assumptions, accidental refactors, stale context, false “done” states, expensive CI loops and side effects that are hard to audit.</p>
-        <p>My approach is to engineer the workflow around the agent instead of relying on a perfect prompt. The harness used on internal projects turns recurring engineering lessons into explicit rules, checks and source-of-truth files.</p>
+    <div class="case-body"><div class="container">
+      <section>
+        <h2>The <em>problem</em></h2>
+        <p>Coding agents are fast, and that speed hides predictable failures: stale context, changes outside the requested scope, “done” claims without evidence, and deploys nobody checked. At ManageBac I worked AI-first in a large Rails monolith with Claude Code, Copilot and custom MCP servers, and saw that the prompt was never the bottleneck — the process around the agent was.</p>
+        <p>So I engineered the workflow instead of polishing prompts, and used it to build <a href="pilot.html"><strong>Pilot</strong></a> end to end.</p>
       </section>
 
-      <section class="case-block">
-        <h2>Core principles</h2>
+      <section>
+        <h2>How it <em>works</em></h2>
+        <ol class="case-flow">
+          <li><strong>Specify.</strong> Claude Code plugins (<code>sdlc</code> + my Rails adaptation <code>mvp-sdlc</code>) produce the artefacts in the project repo: idea brief, PRD, C4 architecture and ADRs, data model, task briefs. A feature starts from a Trello card.</li>
+          <li><strong>Plan.</strong> Each task goes to the Archon <code>factory</code> workflow. It shows a plan and waits for a person's “ok”.</li>
+          <li><strong>Build.</strong> Tests first, then implementation until green. The draft PR is reviewed through several lenses — code, tests, docs, seams — and P0/P1 findings block the merge.</li>
+          <li><strong>Merge &amp; deploy.</strong> CI green and conventions checked → squash merge into <code>develop</code> → automatic dev deploy → health check and error-tracker check → automatic rollback when either is red.</li>
+          <li><strong>Release.</strong> A person merges <code>develop</code> into <code>main</code> and tags <code>vX.Y.Z</code>. Production deploys only from that tag and is watched for ten minutes.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Guards, not <em>good intentions</em></h2>
         <ul>
-          <li><strong>Understand before editing:</strong> inspect repository state, relevant files and existing user changes first.</li>
-          <li><strong>Classify the change:</strong> distinguish spike, bounded change and architectural work.</li>
-          <li><strong>Bound scope explicitly:</strong> document affected files, dependencies, risks and executable verification criteria.</li>
-          <li><strong>Write success is not proof:</strong> after important remote writes, read back the source of truth.</li>
-          <li><strong>Green is not semantic correctness:</strong> a passing build, artifact or screenshot is evidence only when it proves the contract that matters.</li>
-          <li><strong>Checkpoint long work:</strong> publish logical remote checkpoints so future runs resume from authority, not memory.</li>
-          <li><strong>Fast loop, heavy final gate:</strong> use cheap checks during iteration and reserve expensive evidence for the release candidate.</li>
-          <li><strong>Turn failures into system knowledge:</strong> recurring mistakes become rules, automated checks, templates or architecture.</li>
+          <li><strong>Phase gate</strong> (<code>sdlc-gate</code>): a step can't start until the previous artefact exists.</li>
+          <li><strong>Hooks</strong> that block pushes to <code>main</code>, reading secrets and moving published tags.</li>
+          <li><strong>CI checks</strong> for TDD commit order, branch names, PR titles and a non-empty changelog on release PRs.</li>
+          <li><strong>Agent tool contract</strong> (<code>contracts.yaml</code>) linted in CI together with skills, hooks and plugin versions.</li>
+          <li><strong>Supervisor</strong> that answers only routine gates from a policy file, escalates everything else and writes one ledger line per decision.</li>
         </ul>
       </section>
 
-      <section class="case-block">
-        <h2>Reference lifecycle</h2>
-        <pre>1. Read repository + source-of-truth context
-2. Preserve existing user changes
-3. Classify: spike / bounded / architectural
-4. Write a small change plan
-5. Implement the smallest coherent unit
-6. Validate near the real behavior
-7. Run fast quality gates
-8. Publish a remote checkpoint for long work
-9. Read back important remote writes
-10. At release candidate:
-    - full CI
-    - build/export
-    - security checks
-    - visual QA / runtime evidence
-11. Review diff + artifacts
-12. Record what remains unverified
-13. Convert recurring failures into harness improvements</pre>
-      </section>
-
-      <section class="case-block">
-        <h2>Why evidence is first-class</h2>
-        <p>Agent workflows fail when status becomes a substitute for truth. A screenshot can show the wrong route. A file can exist but contain stale data. A deploy API can return success while the remote state differs from what was intended. A test suite can be green while it verifies the wrong contract.</p>
-        <div class="callout">Define what would actually prove the claim, then collect that evidence as close as possible to the real system.</div>
-      </section>
-
-      <section class="case-block">
-        <h2>Fast vs. full CI</h2>
-        <p>On Project Fit, normal draft iteration uses a fast pull-request gate for lockfile integrity, linting, formatting, TypeScript, unit/integration checks and harness validation. Heavy exports and visual evidence run at an explicit final gate instead of every checkpoint.</p>
-        <p>This protects both quality and cost: the release gate is not weakened, but heavyweight evidence is not repeatedly paid for before a real release candidate exists.</p>
-      </section>
-
-      <section class="case-block">
-        <h2>Safety boundaries inside products</h2>
-        <p>The same thinking applies to AI-enabled product features. On a current product, AI-generated interpretation is intentionally separated from canonical product authority. Factual progress, access control, billing, identity and other critical state remain server-authoritative; AI receives bounded context and cannot silently become the source of truth.</p>
-      </section>
-
-      <section class="case-block">
-        <h2>Where I want to push this further</h2>
+      <section>
+        <h2>What it <em>delivered</em></h2>
         <ul>
-          <li>Typed contracts between planning, implementation, review and deployment agents.</li>
-          <li>Stronger policy checks around side-effecting tools and secret-bearing operations.</li>
-          <li>Automated provenance linking claims to tests, screenshots, logs or remote read-back.</li>
-          <li>Reusable adoption patterns engineering teams can understand, customize and teach internally.</li>
-          <li>Metrics that separate “more code produced” from actual throughput, reliability and review quality.</li>
+          <li><a href="pilot.html">Pilot</a> — Rails API + React SPA, live in production, built and operated with this toolkit.</li>
+          <li>Project templates for a new Rails API and React app, and <code>bin/project-add</code>: one command from a name to repos, environments, secrets, a Trello board and a report.</li>
+          <li>A public, provider-agnostic <a href="https://github.com/OlegShevtsov1/agentic-sdlc-reference" target="_blank" rel="noopener noreferrer">reference workflow</a> distilled from it.</li>
         </ul>
       </section>
 
-      <div class="case-footer"><a href="../index.html#work">← Back to selected work</a></div>
-    </div>
+      <section>
+        <h2>Learning <em>behind it</em></h2>
+        <p>Model Context Protocol: Introduction and Advanced Topics (Anthropic Education), and SULICOM AI Academy workshops on Agentic Engineering Workflows and Harness Engineering. <a href="../index.html#certificates">See the certificates →</a></p>
+        <p class="case-note">“The work is complete when the evidence matches the claim.”</p>
+      </section>
+    </div></div>
   </main>
+  <footer class="case-foot"><div class="container"><span>© 2026 Oleh Shevtsov</span><a href="pilot.html">Next: Pilot →</a></div></footer>
 </body>
 </html>

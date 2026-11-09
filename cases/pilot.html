@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pilot — a project and task management SaaS built end to end by Oleh Shevtsov: Rails 8 API, React + TypeScript SPA, Kamal 2 deploys, tag-only releases and rollback.">
+  <meta name="author" content="Oleh Shevtsov">
+  <link rel="canonical" href="https://olegshevtsov1.github.io/cases/pilot.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/warm.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+  <title>Pilot — Oleh Shevtsov</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="case-top"><div class="container"><a href="../index.html">← Oleh Shevtsov</a><nav class="case-nav" aria-label="Case studies"><a href="agentic-sdlc.html">Agentic SDLC</a><a href="self-hosted.html">Self-hosted</a></nav></div></header>
+  <main id="main">
+    <section class="case-hero"><div class="container">
+      <p class="label">CASE STUDY · LIVE IN PRODUCTION</p>
+      <h1><em>Pilot</em></h1>
+      <p class="case-lede">A project and task management SaaS I built end to end — API, SPA, CI/CD and operations — with my own agentic SDLC toolkit: spec → architecture → tested, reviewed, deployed PRs.</p>
+      <div class="case-links"><a href="https://app.pilot.up.km.ua" target="_blank" rel="noopener noreferrer">Open the app ↗</a><a href="https://pilot.up.km.ua/api-docs/index.html" target="_blank" rel="noopener noreferrer">Swagger API docs ↗</a><a href="https://github.com/OlegShevtsov1/1_mvp_pilot_be" target="_blank" rel="noopener noreferrer">Backend repo ↗</a><a href="https://github.com/OlegShevtsov1/1_mvp_pilot_fe" target="_blank" rel="noopener noreferrer">Frontend repo ↗</a></div>
+      <div class="case-facts">
+        <div class="case-fact"><strong>Rails 8 API</strong><span>Ruby 3.3, PostgreSQL 16, Redis 7, token auth, rswag docs.</span></div>
+        <div class="case-fact"><strong>React SPA</strong><span>React 18 + Vite + TypeScript, runtime config, hashed bundles.</span></div>
+        <div class="case-fact"><strong>Kamal 2</strong><span>One Docker image per commit, dev on every merge, prod from a tag.</span></div>
+        <div class="case-fact"><strong>Rollback</strong><span>Health checks, smoke tests, 10-minute release watch, one-click rollback.</span></div>
+      </div>
+    </div></section>
+
+    <div class="case-body"><div class="container">
+      <section>
+        <h2>Why I <em>built it</em></h2>
+        <p>I wanted proof that my <a href="agentic-sdlc.html">agentic SDLC</a> holds up beyond a demo: a real product, two repositories, two environments, real users signing in, and releases I'd trust on a Friday. Pilot is that proof — every feature went from a Trello card through PRD, ADRs and task briefs to a reviewed PR and a deploy.</p>
+      </section>
+
+      <section>
+        <h2>Architecture</h2>
+        <ul>
+          <li><strong>Backend:</strong> Rails 8 API-only on Puma. PostgreSQL 16 for users, projects and tasks; Redis 7 as the cache for list endpoints. Bearer access tokens, with a documented migration path from legacy headers (ADR-0005).</li>
+          <li><strong>Frontend:</strong> React 18 + Vite + TypeScript, served by nginx. API URL, error DSN and environment name are read from <code>/config.js</code> at container start — never baked into the bundle.</li>
+          <li><strong>Errors:</strong> GlitchTip through the Sentry SDK on both sides; the SPA relays browser errors through the API's <code>/api/errors</code> tunnel.</li>
+          <li><strong>Docs:</strong> OpenAPI generated from request specs (rswag), a C4 container diagram and an architecture map with conventions and known debt.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Shipping <em>safely</em></h2>
+        <ol class="case-flow">
+          <li>CI builds <strong>one Docker image per commit</strong>; it is promoted to production, never rebuilt.</li>
+          <li>Every merge into <code>develop</code> deploys to <strong>dev</strong> automatically with Kamal 2.</li>
+          <li><strong>Production</strong> deploys only from an annotated <code>vX.Y.Z</code> tag on <code>main</code>, with a typed confirmation; the frontend waits for the matching backend release.</li>
+          <li>Each deploy waits for <code>/health</code> to report the new release and runs a smoke test against the Swagger document.</li>
+          <li>Production is watched for ten minutes and can be rolled back from the console or GitHub Actions.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Quality <em>gates</em></h2>
+        <ul>
+          <li>RSpec + FactoryBot on the API; ESLint, <code>tsc</code>, Vitest and <code>npm audit</code> on the SPA.</li>
+          <li>gitleaks over the full history, actionlint, and a public-repo check: no internal hosts, IPs or DSNs in tracked files or the built bundle.</li>
+          <li>TDD commit order, branch and PR conventions, and an AI review workflow — all checked in CI.</li>
+          <li>CI jobs can run on a self-hosted runner from my <a href="self-hosted.html">homelab</a>.</li>
+        </ul>
+        <p class="case-note">Built alone, operated like a team: specs, ADRs, gates, release notes and a rollback I've actually tested.</p>
+      </section>
+    </div></div>
+  </main>
+  <footer class="case-foot"><div class="container"><span>© 2026 Oleh Shevtsov</span><a href="self-hosted.html">Next: Self-hosted infrastructure →</a></div></footer>
+</body>
+</html>
